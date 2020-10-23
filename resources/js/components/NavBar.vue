@@ -3,12 +3,12 @@
     <div class="row no-wrap shadow-1">
       <q-toolbar class="col-8 bg-grey-3">
         <q-btn flat round dense icon="menu" />
-        <q-toolbar-title>Title</q-toolbar-title>
+        <q-toolbar-title class="font-sans">OakHouse Technology</q-toolbar-title>
         <q-btn flat round dense icon="search" />
       </q-toolbar>
-      <q-toolbar class="col-4 bg-primary text-white">
+      <q-toolbar class="col-4 text-white bg-grey-3">
         <q-space />
-        <q-btn flat round dense icon="bluetooth" class="q-mr-sm" />
+        <!-- <q-btn flat round dense icon="bluetooth" class="q-mr-sm" /> -->
         <q-btn flat round dense icon="more_vert" />
       </q-toolbar>
     </div>
