@@ -9,7 +9,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import  Quasar  from  'quasar'; 
-// import  'quasar/dist/quasar.sass'; 
+import  'quasar/dist/quasar.sass'; 
 import  'quasar-extras/material-icons';
 import 'quasar-extras/fontawesome';
 /**

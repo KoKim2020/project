@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "quasar": "^1.14.2",
-        "quasar-extras": "^2.0.9"
+        "quasar-extras": "^2.0.9",
+        "tailwindcss": "^1.9.5"
     }
 }
