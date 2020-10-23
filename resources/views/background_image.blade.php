@@ -1,4 +1,4 @@
-<div class="w-full h-64 md:h-screen  bg-center bg-cover" style="background-image:url('{{ asset('storage/images/tesla_bg.jpg') }}');">
+<div class="w-full h-64 md:h-screen  bg-center bg-cover" style="background-image:url('{{ asset('images/tesla_bg.jpg') }}');">
     <div class="md:flex md:justify-center">
         <div class="pt-5 md:pt-20 px-5 md:w-1/2 w-full">
             <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-1 md:py-3 shadow-md" role="alert">
