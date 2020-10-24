@@ -1,5 +1,5 @@
 <div class="tw-w-full tw-hidden md:tw-block tw-h-screen  tw-bg-center tw-bg-cover" style="background-image:url('{{ asset('images/tesla_bg.jpg') }}');">
-    <div class="md:tw-flex md:tw-justify-center">
+    <div class="tw-flex tw-justify-center">
         <div class="tw-pt-5 md:tw-pt-20 tw-px-5 md:tw-w-1/2 tw-w-full">
             <div class="tw-bg-teal-100 tw-border-t-4 tw-border-teal-500 tw-rounded-b tw-text-teal-900 tw-px-4 tw-py-1 md:tw-py-3 tw-shadow-md" role="alert">
                 <div class="tw-flex">
@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="md:tw-hidden tw-block">
+<div class="md:tw-hidden tw-block tw-bg-center tw-bg-cover tw-h-screen" style="background-image:url('{{ asset('images/tesla_bg_mobile.jpg') }}');">
     <div class="tw-flex tw-justify-center">
         <div class="tw-pt-5 md:tw-pt-20 tw-px-5 md:tw-w-1/2 tw-w-full">
             <div class="tw-bg-teal-100 tw-border-t-4 tw-border-teal-500 tw-rounded-b tw-text-teal-900 tw-px-4 tw-py-1 md:tw-py-3 tw-shadow-md" role="alert">

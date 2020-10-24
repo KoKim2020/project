@@ -2,7 +2,7 @@
 	<div class="">
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-8 bg-grey-3">
-				<q-btn flat round dense icon="menu" />
+				<q-btn flat round dense icon="fas fa-home" />
 				<q-toolbar-title class="font-sans">OakHouse Technology</q-toolbar-title>
 				<q-btn flat round dense icon="search" />
 			</q-toolbar>
