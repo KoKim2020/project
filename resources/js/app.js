@@ -12,6 +12,8 @@ import  Quasar  from  'quasar';
 import  'quasar/dist/quasar.sass'; 
 import  'quasar-extras/material-icons';
 import 'quasar-extras/fontawesome';
+import * as VeeValidate from 'vee-validate';
+import VeeValidateLaravel from 'vee-validate-laravel';
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,6 +24,10 @@ import 'quasar-extras/fontawesome';
 
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
+
+Vue.use(VeeValidate);
+Vue.use(VeeValidateLaravel);
 
 Vue.use(Quasar);
 /**
