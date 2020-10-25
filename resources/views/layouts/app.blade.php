@@ -22,6 +22,7 @@
 <body>
     <div id="app">
         <nav-bar class="tw-hidden md:tw-block"></nav-bar>
+        <mobile-nav-bar  class="tw-block md:tw-hidden"></mobile-nav-bar>
         @include('../background_image')
         <main class="py-4">
             @yield('content')

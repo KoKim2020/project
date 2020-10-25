@@ -34,46 +34,10 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-3 bg-grey-3">
-				<q-btn no-caps rounded color="primary"  label="Q & A Section" class="" />
+				<q-btn no-caps outline color="primary" label="Q & A Section" />
 				<q-space />
 				<!-- account setting -->
-				<q-btn-dropdown
-					flat
-					color="cyan"
-					push
-					no-caps
-					@click="onMainClick"
-					>
-					<template v-slot:label>
-						<q-avatar size="42px">
-							<img src="https://cdn.quasar.dev/img/avatar2.jpg">
-						</q-avatar>
-					</template>
-
-					<div class="row no-wrap q-pa-md">
-						<div class="column">
-							<div class="text-h6 q-mb-md">Settings</div>
-						</div>
-
-						<q-separator vertical inset class="q-mx-lg" />
-
-						<div class="column items-center">
-							<q-avatar size="72px">
-								<img src="https://cdn.quasar.dev/img/boy-avatar.png">
-							</q-avatar>
-
-							<div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
-
-							<q-btn
-								color="primary"
-								label="Logout"
-								push
-								size="sm"
-								v-close-popup
-							/>
-						</div>
-					</div>
-				</q-btn-dropdown>
+				<account-setting></account-setting>
 			</q-toolbar>
 		</div>
 	</div>
@@ -81,6 +45,12 @@
 
 <style >
 	.q-toolbar__title {
-		font-size: 15px !important;
+		font-size: 11px !important;
 	}
+	@media (min-width: 640px) { 
+		.q-toolbar__title {
+			font-size: 15px !important;
+		}
+	}
+
 </style>
