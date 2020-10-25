@@ -26,3 +26,8 @@ Route::get('/test', function() {
     $url = Storage::url('images/tesla_wallpaper.jpg');
     return $url;
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
