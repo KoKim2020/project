@@ -34,9 +34,8 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-3 bg-grey-3">
-				<q-btn no-caps rounded color="primary"  label="Q & A Section" />
-								<q-space />
-
+				<q-btn no-caps rounded color="primary"  label="Q & A Section" class="" />
+				<q-space />
 				<!-- account setting -->
 				<q-btn-dropdown
 					flat

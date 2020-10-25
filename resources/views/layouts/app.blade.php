@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav-bar></nav-bar>
+        <nav-bar class="tw-hidden md:tw-block"></nav-bar>
         @include('../background_image')
         <main class="py-4">
             @yield('content')
