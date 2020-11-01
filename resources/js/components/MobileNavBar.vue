@@ -41,7 +41,7 @@
                 </q-list>
             </q-btn-dropdown>
             <q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
-            <account-setting></account-setting>
+            <slot></slot>
         </q-toolbar>
     </div>
 </template>

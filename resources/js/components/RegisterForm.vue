@@ -103,6 +103,8 @@
                                 icon: 'cloud_done',
                                 message: 'Register Successfully'
                             })
+                            this.alert = false
+                            window.location.reload()
                         }
                     })
                     .catch (error => {

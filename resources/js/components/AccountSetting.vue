@@ -26,16 +26,29 @@
                     </q-avatar>
 
                     <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
-
-                    <q-btn
-                        color="primary"
-                        label="Logout"
-                        push
-                        size="sm"
-                        v-close-popup
-                    />
+                    <q-form :action='logOut' method="POST">
+                        <slot></slot>
+                        <q-btn
+                            color="primary"
+                            label="Logout"
+                            push
+                            size="sm"
+                            v-close-popup
+                            type="submit"
+                        />
+                    </q-form>
+                    
                 </div>
             </div>
 		</q-btn-dropdown>
     </div>
 </template>
+<script>
+export default {
+    data () {
+        return {
+            logOut: route('logout')
+        }
+    }
+}
+</script>

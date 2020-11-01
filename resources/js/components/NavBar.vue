@@ -37,7 +37,7 @@
 				<q-btn no-caps outline color="primary" label="Q & A Section" />
 				<q-space />
 				<!-- account setting -->
-				<account-setting></account-setting>
+				<slot></slot>
 			</q-toolbar>
 		</div>
 	</div>
