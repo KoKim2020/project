@@ -15,7 +15,6 @@
                 <q-card-section class="q-pt-md">
                     <div class="tw-flex tw-justify-center">
                         <div class="tw-w-2/3 q-gutter-y-md column">
-                            <pre>{{ formData }}</pre>
                             <q-input 
                                 filled 
                                 v-model="formData.name" 
@@ -97,13 +96,14 @@
                     axios
                     .post(route('register'), this.formData)
                     .then(response => {
-                        console.log(response.data)
-                        this.$q.notify({
-                            color: 'green-4',
-                            textColor: 'white',
-                            icon: 'cloud_done',
-                            message: 'Submitted'
-                        })
+                        if(response.data.status == 'success'){
+                            this.$q.notify({
+                                color: 'green-4',
+                                textColor: 'white',
+                                icon: 'cloud_done',
+                                message: 'Register Successfully'
+                            })
+                        }
                     })
                     .catch (error => {
                         this.$setLaravelValidationErrorsFromResponse(error.response.data);
