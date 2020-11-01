@@ -22,24 +22,19 @@
 <body>
     <div id="app">
         <div class="tw-font-sans">
-            <nav-bar class="tw-hidden md:tw-block">
-                @guest
-                    
-                @else
+            @guest
+            @else
+                <nav-bar class="tw-hidden md:tw-block">
                     <account-setting>
                         @csrf
                     </account-setting>
-                @endguest
-            </nav-bar>
-            <mobile-nav-bar  class="tw-block md:tw-hidden">
-                @guest
-                    
-                @else
+                </nav-bar>
+                <mobile-nav-bar  class="tw-block md:tw-hidden">
                     <account-setting>
                         @csrf
                     </account-setting>
-                @endguest
-            </mobile-nav-bar>
+                </mobile-nav-bar>
+            @endguest
             @include('../background_image')
         </div>
     </div>

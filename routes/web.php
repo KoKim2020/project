@@ -23,6 +23,7 @@ Auth::routes(['verify' => true]);
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/test', function() {
     $url = Storage::url('images/tesla_wallpaper.jpg');
     return $url;

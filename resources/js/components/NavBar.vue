@@ -35,8 +35,7 @@
 			
 			<q-toolbar class="col-3 bg-grey-3">
 				<q-btn no-caps outline color="primary" label="Q & A Section" />
-				<q-space />
-				<!-- account setting -->
+                <q-space />
 				<slot></slot>
 			</q-toolbar>
 		</div>
