@@ -2,7 +2,7 @@
 	<div class="">
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-9 bg-grey-3">			
-				<q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
+				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
 				<q-btn flat type="a" href="" push  icon="fas fa-home" color="primary" label="Home" />
 				<!-- Projects -->

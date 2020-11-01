@@ -21,9 +21,11 @@
 </head>
 <body>
     <div id="app">
-        <nav-bar class="tw-hidden md:tw-block"></nav-bar>
-        <mobile-nav-bar  class="tw-block md:tw-hidden"></mobile-nav-bar>
-        @include('../background_image')
+        <div class="tw-font-sans">
+            <nav-bar class="tw-hidden md:tw-block"></nav-bar>
+            <mobile-nav-bar  class="tw-block md:tw-hidden"></mobile-nav-bar>
+            @include('../background_image')
+        </div>
     </div>
 </body>
 </html>

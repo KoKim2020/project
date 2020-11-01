@@ -8,7 +8,7 @@ module.exports = {
     './resources/views/**/*.php'
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {},
   plugins: [],
