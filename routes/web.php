@@ -27,6 +27,8 @@ Route::get('/test', function() {
     return $url;
 });
 
+Route::resource('/test', 'TestController');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
