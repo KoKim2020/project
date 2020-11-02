@@ -11,6 +11,7 @@
             <div class="tw-w-2/4">
                 <div class="tw-flex tw-justify-center">
                     <div class="">
+                        <write-post></write-post>
                         @for ($i = 0; $i < 15; $i++)
                             <news-feed></news-feed>
                         @endfor
