@@ -6,6 +6,7 @@ use App\Test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use TCG\Voyager\Models\Post;
 
 class TestController extends Controller
 {
@@ -16,7 +17,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('test');
+        return Post::all();
     }
 
     /**
