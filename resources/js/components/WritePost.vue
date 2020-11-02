@@ -21,7 +21,7 @@
         </q-card>
 
         <q-dialog v-model="writePost" style="width: 700px; max-width: 80vw;">
-            <q-card>
+            <q-card class="q-pb-sm">
                 <q-card-section>
                     <div class="text-h6">Create a Post</div>
                 </q-card-section>
@@ -43,17 +43,28 @@
                 
                 <q-card-section class="">
                     <div class="" style="width: 500px">
+                        <q-uploader
+                            :factory="uploadFile"
+                            label="Add Photo To Your Post"
+                            multiple
+                            batch
+                            style="width: 500px"
+                            flat
+                            color="grey-3"
+                            text-color="grey-8"
+                        />
                         <q-input
-                            v-model="text"
+                            v-model="formData.text"
                             filled
                             type="textarea"
                             label="What Do You Want To Share About?"
                         />
+                        
                     </div>
                 </q-card-section>
 
                 <q-card-actions align="right">
-                    <q-btn flat label="OK" color="primary" v-close-popup />
+                    <q-btn push label="POST" color="primary" no-caps />
                 </q-card-actions>
             </q-card>
         </q-dialog>
@@ -70,7 +81,15 @@
 export default {
     data () {
         return {
-            writePost: false
+            writePost: false,
+            formData: {
+                text: ''
+            }
+        }
+    },
+    methods: {
+        uploadFile (file, updateProgress) {
+            console.log(file)
         }
     }
 }
