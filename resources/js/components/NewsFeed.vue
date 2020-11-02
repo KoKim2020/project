@@ -41,7 +41,7 @@ export default {
     }
     
     .contracted {
-        height: 150px;
+        height: 100px;
         overflow: hidden;
     }
 </style>

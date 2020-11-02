@@ -12,33 +12,41 @@
                 </q-avatar>
             </template>
 
-            <div class="row no-wrap q-pa-md">
-                <div class="column">
-                    <div class="text-h6 q-mb-md">Settings</div>
-                </div>
+            <q-list bordered separator style="width: 250px;" class="text-center">
+                <q-item clickable v-ripple>
+                    <div class=" row items-start q-gutter-md">
+                        <q-avatar size="52px">
+                            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                        </q-avatar>
+                        <q-item-section class="q-pt-sm">
+                            <q-item-label>Kyaw Kyaw</q-item-label>
+                            <q-item-label caption>Electronics Engineer</q-item-label>
+                        </q-item-section>
+                    </div>
+                </q-item>
 
-                <q-separator vertical inset class="q-mx-lg" />
+                <q-item clickable v-ripple>
+                    <q-item-section>
+                        <q-item-label>View Profile</q-item-label>
+                    </q-item-section>
+                </q-item>
 
-                <div class="column items-center">
-                    <q-avatar size="72px">
-                        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-                    </q-avatar>
-
-                    <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
-                    <q-form :action='logOut' method="POST">
-                        <slot></slot>
-                        <q-btn
-                            color="primary"
-                            label="Logout"
-                            push
-                            size="sm"
-                            v-close-popup
-                            type="submit"
-                        />
-                    </q-form>
-                    
-                </div>
-            </div>
+                <q-item clickable v-ripple>
+                    <q-item-section>
+                        <q-form :action='logOut' method="POST">
+                            <slot></slot>
+                            <q-btn
+                                color="primary"
+                                label="Logout"
+                                flat
+                                v-close-popup
+                                type="submit"
+                                no-caps
+                            />
+                        </q-form>
+                    </q-item-section>
+                </q-item>
+            </q-list>
 		</q-btn-dropdown>
     </div>
 </template>
