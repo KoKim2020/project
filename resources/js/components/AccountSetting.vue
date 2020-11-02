@@ -5,7 +5,6 @@
             color="cyan"
             push
             no-caps
-            @click="onMainClick"
             >
             <template v-slot:label>
                 <q-avatar size="33px">

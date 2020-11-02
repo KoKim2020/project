@@ -1,20 +1,20 @@
 <template>
 	<div class="">
 		<div class="row no-wrap shadow-1">
-			<q-toolbar class="col-9 bg-grey-3">			
+			<q-toolbar class="col-9 bg-grey-3">	
 				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
-				<q-btn flat type="a" href="" push  icon="fas fa-home" color="primary" label="Home" />
+				<q-btn flat type="a" :href="homeUrl" push  icon="fas fa-home" :color="currentUrl == '/home' ? 'black' : 'primary'" label="Home"/>
 				<!-- Projects -->
 				<q-btn-dropdown flat color="primary" label="Projects">
 					<q-list>
-						<q-item clickable v-close-popup @click="onItemClick">
+						<q-item clickable v-close-popup>
 							<q-item-section>
 								<q-item-label class="text-primary">Arduino Projects</q-item-label>
 							</q-item-section>
 						</q-item>
 
-						<q-item clickable v-close-popup @click="onItemClick">
+						<q-item clickable v-close-popup>
 							<q-item-section>
 								<q-item-label class="text-primary">Respberry Pi Projects</q-item-label>
 							</q-item-section>
@@ -53,3 +53,18 @@
 	}
 
 </style>
+
+<script>
+export default {
+	data () {
+		return {
+			currentUrl: '',
+			homeUrl: route('home')
+		}
+	},
+	created (){
+		var url = window.location.pathname;
+		this.currentUrl = url
+    }
+}
+</script>
