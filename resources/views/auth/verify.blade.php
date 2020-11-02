@@ -5,7 +5,7 @@
         <div>
             @if (session('resent'))
                 <div class="">
-                    <p class="tw-text-sm">
+                    <p class="tw-text-sm tw-text-gray-700">
                         {{ __('A fresh verification link has been sent to your email address.') }}
                     </p>
                 </div>
