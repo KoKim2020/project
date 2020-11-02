@@ -104,7 +104,8 @@
                                 message: 'Register Successfully'
                             })
                             this.alert = false
-                            window.location.reload()
+                            // Navigate to the Location.reload article by replacing this page
+                            window.location.replace(route('home'))
                         }
                     })
                     .catch (error => {
