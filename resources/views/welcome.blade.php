@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="tw-flex tw-justify-center">
+<div class="tw-flex tw-justify-center tw-h-screen">
     <div class="tw-pt-5 md:tw-pt-20 tw-px-5 md:tw-w-1/2 tw-w-full">
         <div class="tw-bg-teal-100 tw-border-t-4 tw-border-teal-500 tw-rounded-b tw-text-teal-900 tw-px-4 tw-py-1 md:tw-py-3 tw-shadow-md" role="alert">
             <div class="tw-flex">
