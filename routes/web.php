@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function () {
-    $url = Storage::url('images/tesla_wallpaper.jpg');
-    return view('welcome', compact('url'));
-});
+    return view('welcome');
+})->middleware('guest');
 
 Auth::routes(['verify' => true]);
 

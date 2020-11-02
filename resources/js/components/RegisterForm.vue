@@ -19,7 +19,6 @@
                                 filled 
                                 v-model="formData.name" 
                                 label="Name" 
-                                v-validate="'required'"
                                 :error-message="errors.first('name')"
                                 :error="errors.has('name')"
                             />
@@ -28,7 +27,6 @@
                                 v-model="formData.email" 
                                 label="Email" 
                                 type="email"
-                                v-validate="'required'"
                                 :error-message="errors.first('email')"
                                 :error="errors.has('email')"
                             />
@@ -37,7 +35,6 @@
                                 filled 
                                 type="password" 
                                 label="Password" 
-                                v-validate="'required'"
                                 :error-message="errors.first('password')"
                                 :error="errors.has('password')"
                             />
