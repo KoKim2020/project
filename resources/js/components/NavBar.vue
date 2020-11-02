@@ -4,7 +4,7 @@
 			<q-toolbar class="col-9 bg-grey-3">	
 				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
-				<q-btn flat type="a" :href="homeUrl" push  icon="fas fa-home" :color="currentUrl == '/home' ? 'black' : 'primary'" label="Home"/>
+				<q-btn flat type="a" :href="homeUrl" push  icon="fas fa-home" :color="currentUrl == '/home' ? 'indigo' : 'primary'" label="Home"/>
 				<!-- Projects -->
 				<q-btn-dropdown flat color="primary" label="Projects">
 					<q-list>
