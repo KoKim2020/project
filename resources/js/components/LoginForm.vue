@@ -42,6 +42,9 @@ export default {
             isPwd: true,
         }
     },
+    created() {
+        console.log(route('home'))
+    },
     methods: {
         logIn() {
             axios
