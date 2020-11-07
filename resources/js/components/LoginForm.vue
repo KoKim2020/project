@@ -56,7 +56,7 @@ export default {
                         color: 'green-4',
                         textColor: 'white',
                         icon: 'cloud_done',
-                        message: 'Register Successfully'
+                        message: 'Login Successfully'
                     })
                     // Navigate to the Location.reload article by replacing this page
                     window.location.href = route('home')
