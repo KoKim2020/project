@@ -24,11 +24,11 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', function() {
-    $url = Storage::url('images/tesla_wallpaper.jpg');
+    $url = Storage::url('images/c9WR6sm4.png');
     return $url;
 });
 
-Route::resource('/test', 'TestController');
+// Route::resource('/test', 'TestController');
 
 
 Route::group(['prefix' => 'admin'], function () {

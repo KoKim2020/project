@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\FrontendPost;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Post::all();
+        $posts->load('author.user');
+
+        foreach ($posts as $key => $post) {
+            $post->url = asset(Storage::url($post->image));
+        }
+        return view('home', [
+            'posts' => $posts
+        ]);
     }
 }
