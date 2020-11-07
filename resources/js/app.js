@@ -14,7 +14,7 @@ import { Cropper } from 'vue-advanced-cropper'
 import  Quasar  from  'quasar'; 
 import  'quasar/dist/quasar.sass'; 
 import  'quasar-extras/material-icons';
-// import 'quasar-extras/fontawesome';
+import 'quasar-extras/fontawesome';
 // vee validate
 import * as VeeValidate from 'vee-validate';
 import VeeValidateLaravel from 'vee-validate-laravel';
