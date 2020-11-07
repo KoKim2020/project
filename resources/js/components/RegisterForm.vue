@@ -76,9 +76,6 @@
                 }
             }
         },
-        created () {
-            console.log(route('test.create'))
-        }, 
         methods: {
             signUp () {
                 if (this.accept !== true) {
@@ -102,7 +99,7 @@
                             })
                             this.alert = false
                             // Navigate to the Location.reload article by replacing this page
-                            window.location.replace(route('home'))
+                            window.location.href = route('home')
                         }
                     })
                     .catch (error => {

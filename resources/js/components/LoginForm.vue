@@ -55,7 +55,7 @@ export default {
                         message: 'Register Successfully'
                     })
                     // Navigate to the Location.reload article by replacing this page
-                    window.location.replace(route('home'))
+                    window.location.href = route('home')
                 }
             })
             .catch (error => {
