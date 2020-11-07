@@ -50,6 +50,7 @@ export default {
             axios
             .post('/login', this.formData)
             .then(response => {
+                console.log(response.data)
                 if(response.data.status == 'success'){
                     this.$q.notify({
                         color: 'green-4',
