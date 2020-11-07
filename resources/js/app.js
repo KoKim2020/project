@@ -11,10 +11,10 @@ window.Vue = require('vue');
 import { Cropper } from 'vue-advanced-cropper'
 
 // quasar
-import  Quasar  from  'quasar'; 
-import  'quasar/dist/quasar.sass'; 
-import  'quasar-extras/material-icons';
-import 'quasar-extras/fontawesome';
+// import  Quasar  from  'quasar'; 
+// import  'quasar/dist/quasar.sass'; 
+// import  'quasar-extras/material-icons';
+// import 'quasar-extras/fontawesome';
 // vee validate
 import * as VeeValidate from 'vee-validate';
 import VeeValidateLaravel from 'vee-validate-laravel';
@@ -33,7 +33,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 Vue.use(VeeValidate);
 Vue.use(VeeValidateLaravel);
 
-Vue.use(Quasar);
+// Vue.use(Quasar);
 window.route = require('./route');
 
 /**
