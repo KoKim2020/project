@@ -114,7 +114,11 @@ trait AuthenticatesUsers
         }
         
         if(Auth::user()->role_id == 1) {
-            return redirect('admin');
+            return $request->wantsJson()
+            ? new JsonResponse([
+                'status' => 'success'
+            ], 201) // login from user login
+            : redirect('admin'); //login from admin
         }else {
             return response()->json([
                 'status' => 'success'
