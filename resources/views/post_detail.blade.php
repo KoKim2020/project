@@ -21,11 +21,9 @@
                     </q-item-section>
                 </div> --}}
 
-                <p class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</p>
+                <h1 class="tw-font-bold tw-text-xl ">{{ $post->title }}</h1>
     
                 <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
-                <p class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</p>
-
                 <div class="tw-py-4">
                     <p class="tw-text-gray-700 tw-text-base">
                         {!! $post->body !!}
