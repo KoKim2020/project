@@ -1,15 +1,32 @@
 @foreach ($posts as $post)
-    <div class="tw-max-w-sm tw-rounded tw-overflow-hidden tw-shadow-lg tw-py-4">
-        <img class="tw-w-full" src="{{ $post->img_url }} " alt="Sunset in the mountains">
-        <div class="tw-px-6 tw-py-4">
-            <div class="tw-font-bold tw-text-xl tw-mb-2">{{ $post->title }}</div>
-            <p class="tw-text-gray-700 tw-text-base">
+    <div class="q-pa-sm">
+        <q-card style="width: 100%; max-width: 450px;">
+            <q-item>
+                <q-item-section avatar>
+                    <q-avatar>
+                        <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+                    </q-avatar>
+                </q-item-section>
+
+                <q-item-section>
+                    <q-item-label>Title</q-item-label>
+                    <q-item-label caption>Subhead</q-item-label>
+                </q-item-section>
+            </q-item>
+
+            <q-card-section>
+                <div class="text-h6">{{ $post->title }}</div>
+            </q-card-section>
+
+            <img src="{{ $post->img_url }}">
+
+            <q-card-section class="q-pt-md">
                 {!! (Str::limit( strip_tags($post->body), 50 )) !!}
-            </p>
-        </div>
-        <div class="tw-px-6 tw-pt-4 tw-pb-2 tw-text-right">
-            <q-btn flat color="primary"  type="a" href="{{ route('post.show', $post->id) }}" >More + </q-btn>
-        </div>
+            </q-card-section>
+
+            <q-card-actions  align="right">
+                <q-btn flat color="primary"  type="a" href="{{ route('post.show', $post->id ) }}" >More + </q-btn>
+            </q-card-actions>
+        </q-card>
     </div>
 @endforeach
-
