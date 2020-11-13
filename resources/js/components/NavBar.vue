@@ -34,7 +34,7 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-3 bg-grey-3">
-				<q-btn no-caps outline color="primary" label="Q & A Section" />
+				<q-btn no-caps outline color="primary" label="Add A Post" />
                 <q-space />
 				<slot></slot>
 			</q-toolbar>

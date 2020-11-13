@@ -8,7 +8,7 @@
         <div class="tw-w-2/4">
             <div class="tw-flex tw-justify-center">
                 <div class="">
-                    <write-post></write-post>
+                    {{-- <write-post></write-post> --}}
                     <news-feed :posts="{{ $posts }}"></news-feed>
                 </div>
             </div>
