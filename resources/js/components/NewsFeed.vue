@@ -2,15 +2,27 @@
     <div>
         <div v-for="(post, index) in posts" :key="index">
             <div class="q-pa-sm">
-                <q-card class="my-card">
+                <q-card class="post_list">
                     <!-- <pre>{{ post }}</pre> -->
+                    <q-item>
+                        <q-item-section avatar>
+                            <q-avatar>
+                                <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+                            </q-avatar>
+                        </q-item-section>
 
-                    <img :src="post.url">
+                        <q-item-section>
+                            <q-item-label>Title</q-item-label>
+                            <q-item-label caption>Subhead</q-item-label>
+                        </q-item-section>
+                    </q-item>
 
                     <q-card-section>
                         <div class="text-h6">{{ post.title }}</div>
-                        <div class="text-subtitle2">{{ post.author.user.name }}</div>
+                        <!-- <div class="text-subtitle2">{{ post.author.user.name }}</div> -->
                     </q-card-section>
+
+                    <img :src="post.img_url">
 
                     <q-card-section class="q-pt-none">
                         <p :class="{ contracted: contracted }" v-html="post.body"></p>
@@ -38,9 +50,9 @@ export default {
 </script>
 
 <style>
-    .my-card {
+    .post_list {
         width: 100%;
-        max-width: 450px
+        max-width: 450px;
     }
     
     .contracted {
