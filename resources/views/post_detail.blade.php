@@ -4,7 +4,10 @@
     <div class="tw-container tw-mx-auto tw-px-4">
         <div class="tw-flex tw-justify-center">
             <div class="tw-max-w-sm tw-rounded tw-overflow-hidden " style="max-width: 750px; width: 100%; padding: 25px; ">
+                {{-- <div class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</div> --}}
+                <h1>fsdassssssssssssss</h1>
                 <div class="tw-flex tw-flex-row tw-py-6">
+
                     <q-item-section avatar>
                         <q-avatar>
                         <img src="{{ $post->author->user->profile_img}}">
@@ -21,7 +24,6 @@
                     </q-item-section>
                 </div>
 
-                <div class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</div>
     
                 <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
 
