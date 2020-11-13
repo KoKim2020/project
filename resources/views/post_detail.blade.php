@@ -21,7 +21,7 @@
                     </q-item-section>
                 </div>
 
-                <div class="tw-font-bold tw-text-xl tw-mb-3">The Coldest Sunset</div>
+                <div class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</div>
     
                 <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
 
@@ -32,9 +32,19 @@
                 </div>
 
                 <div class="tw-px-6 tw-pt-4 tw-pb-2">
-                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">#photography</span>
-                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">#travel</span>
-                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">#winter</span>
+                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">
+                        #fridaysharing
+                    </span>
+                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">
+                        #oakhouse
+                    </span>   
+                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">
+                        #timeboxing
+
+                    </span>   
+                    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">
+                        #timeblocking
+                    </span>
                 </div>
             </div>
         </div>
