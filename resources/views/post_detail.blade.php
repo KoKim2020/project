@@ -22,7 +22,7 @@
                 </q-card-section>
     
                 <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
-                <div class="tw-px-6 tw-py-4">
+                <div class="tw-px-2 tw-py-4">
                     <p class="tw-text-gray-700 tw-text-base">
                         {!! $post->body !!}
                     </p>
