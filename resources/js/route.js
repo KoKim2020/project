@@ -1,3 +1,4 @@
+
 var routes = window.Laravel.routes
 module.exports = function () {
     var args = Array.prototype.slice.call(arguments);

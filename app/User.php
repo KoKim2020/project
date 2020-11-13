@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Support\Facades\Storage;
+use App\Role;
 class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
     use Notifiable;
+    protected $appends = ['img_url'];
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +18,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avator'
     ];
 
     /**
@@ -36,4 +38,13 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getImgUrlAttribute($value){
+        return asset(Storage::url('users/default.png'));
+    }
+
+    // public function role()
+    // {
+    //     return $this->belongsTo(Role::class, 'role_id');
+    // }
 }

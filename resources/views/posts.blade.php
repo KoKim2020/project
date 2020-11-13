@@ -1,16 +1,21 @@
+
 @foreach ($posts as $post)
     <div class="q-pa-sm">
         <q-card style="width: 100%; max-width: 450px;">
-            <q-item>
+            <q-item class="q-py-md">
                 <q-item-section avatar>
                     <q-avatar>
-                        <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+                    <img src="{{ $post->author->user->img_url}}">
                     </q-avatar>
                 </q-item-section>
 
                 <q-item-section>
-                    <q-item-label>Title</q-item-label>
-                    <q-item-label caption>Subhead</q-item-label>
+                    <q-item-label>{{ $post->author->user->name }}</q-item-label>
+                    @if ($post->author->user->role_id == 2)
+                        <q-item-label caption>Admin</q-item-label>
+                    @else
+                        <q-item-label caption>Author</q-item-label>
+                    @endif
                 </q-item-section>
             </q-item>
 
@@ -30,3 +35,4 @@
         </q-card>
     </div>
 @endforeach
+

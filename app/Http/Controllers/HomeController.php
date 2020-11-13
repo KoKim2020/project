@@ -26,8 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $posts->load('author.user');
-        
+        $posts->load('author.user', 'author.user.role');
+
         return view('home', [
             'posts' => $posts
         ]);
