@@ -4,7 +4,7 @@
     <div class="tw-container tw-mx-auto tw-px-4">
         <div class="tw-flex tw-justify-center">
             <div class="tw-max-w-sm tw-rounded tw-overflow-hidden " style="max-width: 750px; width: 100%; padding: 25px; ">
-                <q-item>
+                <div class="tw-flex tw-flex-row tw-py-6">
                     <q-item-section avatar>
                         <q-avatar>
                             <img src="https://cdn.quasar.dev/img/avatar2.jpg">
@@ -15,14 +15,13 @@
                         <q-item-label>Title</q-item-label>
                         <q-item-label caption>Subhead</q-item-label>
                     </q-item-section>
-                </q-item>
+                </div>
 
-                <q-card-section>
-                    <div class="text-h6">{{ $post->title }}</div>
-                </q-card-section>
+                <div class="tw-font-bold tw-text-xl tw-mb-3">The Coldest Sunset</div>
     
                 <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
-                <div class="tw-px-2 tw-py-4">
+
+                <div class="tw-py-4">
                     <p class="tw-text-gray-700 tw-text-base">
                         {!! $post->body !!}
                     </p>
