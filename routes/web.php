@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('guest');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('guest');
 
 Auth::routes(['verify' => true]);
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/test', function() {
     $url = Storage::url('images/c9WR6sm4.png');
