@@ -30,4 +30,12 @@ class HomeController extends Controller
             'posts' => $posts
         ]);
     }
+
+    /**
+     * view coming soon page
+     */
+
+    public function comingSoon () {
+        return view('coming_soon');
+    }
 }

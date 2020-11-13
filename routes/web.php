@@ -22,6 +22,8 @@ Auth::routes(['verify' => true]);
 
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/coming_soon', 'HomeController@comingSoon')->name('coming_soon');
+
 
 Route::get('/test', function() {
     $url = Storage::url('images/c9WR6sm4.png');
