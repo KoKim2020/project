@@ -7280,7 +7280,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".post_list {\n  width: 100%;\n  max-width: 450px;\n}\n.contracted {\n  height: 70px;\n  overflow: hidden;\n}\n", ""]);
+exports.push([module.i, ".post_list {\n  width: 100%;\n  max-width: 450px;\n}\n.contracted {\n  height: 60px;\n  overflow: hidden;\n}\n", ""]);
 
 // exports
 
@@ -97742,7 +97742,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("img", { attrs: { src: post.img_url } }),
                 _vm._v(" "),
-                _c("q-card-section", { staticClass: "q-pt-none" }, [
+                _c("q-card-section", { staticClass: "q-pt-md" }, [
                   _c("p", {
                     class: { contracted: _vm.contracted },
                     domProps: { innerHTML: _vm._s(post.body) }
@@ -97852,7 +97852,7 @@ var render = function() {
           _vm._v(" "),
           _c("img", { attrs: { src: _vm.post.img_url } }),
           _vm._v(" "),
-          _c("q-card-section", { staticClass: "q-pt-none" }, [
+          _c("q-card-section", { staticClass: "q-pt-md" }, [
             _c("p", { domProps: { innerHTML: _vm._s(_vm.post.body) } })
           ])
         ],

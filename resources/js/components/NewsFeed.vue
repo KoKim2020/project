@@ -24,7 +24,7 @@
 
                     <img :src="post.img_url">
 
-                    <q-card-section class="q-pt-none">
+                    <q-card-section class="q-pt-md">
                         <p :class="{ contracted: contracted }" v-html="post.body"></p>
                     </q-card-section>
 
@@ -56,7 +56,7 @@ export default {
     }
     
     .contracted {
-        height: 70px;
+        height: 60px;
         overflow: hidden;
     }
 </style>

@@ -21,7 +21,7 @@
 
             <img :src="post.img_url">
 
-            <q-card-section class="q-pt-none">
+            <q-card-section class="q-pt-md">
                 <p v-html="post.body"></p>
             </q-card-section>
         </q-card>
