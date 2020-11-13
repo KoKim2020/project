@@ -7,13 +7,17 @@
                 <div class="tw-flex tw-flex-row tw-py-6">
                     <q-item-section avatar>
                         <q-avatar>
-                            <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+                        <img src="{{ $post->author->user->profile_img}}">
                         </q-avatar>
                     </q-item-section>
     
                     <q-item-section>
-                        <q-item-label>Title</q-item-label>
-                        <q-item-label caption>Subhead</q-item-label>
+                        <q-item-label>{{ $post->author->user->name }}</q-item-label>
+                        @if ($post->author->user->role_id == 1)
+                            <q-item-label caption>Admin</q-item-label>
+                        @else
+                            <q-item-label caption>Author</q-item-label>
+                        @endif
                     </q-item-section>
                 </div>
 

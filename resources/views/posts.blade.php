@@ -5,13 +5,13 @@
             <q-item class="q-py-md">
                 <q-item-section avatar>
                     <q-avatar>
-                    <img src="{{ $post->author->user->img_url}}">
+                    <img src="{{ $post->author->user->profile_img }}">
                     </q-avatar>
                 </q-item-section>
 
                 <q-item-section>
                     <q-item-label>{{ $post->author->user->name }}</q-item-label>
-                    @if ($post->author->user->role_id == 2)
+                    @if ($post->author->user->role_id == 1)
                         <q-item-label caption>Admin</q-item-label>
                     @else
                         <q-item-label caption>Author</q-item-label>

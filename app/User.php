@@ -10,7 +10,7 @@ use App\Role;
 class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
     use Notifiable;
-    protected $appends = ['img_url'];
+    protected $appends = ['profile_img'];
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +18,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avator'
+        'name', 'email', 'password', 
     ];
 
     /**
@@ -39,12 +39,8 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function getImgUrlAttribute($value){
-        return asset(Storage::url('users/default.png'));
+    public function getProfileImgAttribute($value){
+        return asset(Storage::url($this->avatar));
     }
 
-    // public function role()
-    // {
-    //     return $this->belongsTo(Role::class, 'role_id');
-    // }
 }
