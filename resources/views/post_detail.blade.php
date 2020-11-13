@@ -4,7 +4,7 @@
     <div class="tw-container tw-mx-auto tw-px-4">
         <div class="tw-flex tw-justify-center">
             <div class="tw-max-w-sm tw-rounded tw-overflow-hidden " style="max-width: 750px; width: 100%; padding: 25px; ">
-                <div class="tw-flex tw-flex-row tw-py-6">
+                {{-- <div class="tw-flex tw-flex-row tw-py-6">
                     <q-item-section avatar>
                         <q-avatar>
                         <img src="{{ $post->author->user->profile_img}}">
@@ -19,7 +19,7 @@
                             <q-item-label caption>Author</q-item-label>
                         @endif
                     </q-item-section>
-                </div>
+                </div> --}}
 
                 <p class="tw-font-bold tw-text-xl tw-mb-3">{{ $post->title }}</p>
     
