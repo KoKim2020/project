@@ -34,8 +34,19 @@
                     </q-item>
 
                     <q-item clickable v-close-popup>
-                        <q-item-section  @click="comingSoonUrl">
+                        <q-item-section  @click="createPostUrl">
                             <q-item-label class="text-no-wrap">Add A Post</q-item-label>
+                        </q-item-section>
+                    </q-item>
+                    <q-separator spaced />
+                    <q-item clickable v-close-popup>
+                        <q-item-section class="text-center bg-teal-2" @click="loginUrl">
+                            <q-item-label class="text-no-wrap" >Login</q-item-label>
+                        </q-item-section>
+                    </q-item>
+                    <q-item clickable v-close-popup>
+                        <q-item-section class="text-center bg-teal-4" @click="registerUrl">
+                            <q-item-label class="text-no-wrap text-white">Register</q-item-label>
                         </q-item-section>
                     </q-item>
                 </q-list>
@@ -48,16 +59,22 @@
 
 <script>
 export default {
-	created (){
-		var url = window.location.pathname;
-		this.currentUrl = url
-	},
+	
 	methods: {
 		comingSoonUrl () {
 			window.location.href = route('coming_soon')
         },
         homeUrl () {
             window.location.href = route('home')
+        },
+        loginUrl () {
+            window.location.href = route('login')
+        },
+        registerUrl () {
+            window.location.href = route('register')
+        }, 
+        createPostUrl() {
+            window.location.href = route('post.create')
         }
 	}
 }

@@ -5,9 +5,13 @@
             v-model="alert"
         >
             <q-card style="width: 500px; max-width: 80vw;" class="tw-font-sans">
-                <q-card-section>
-                    <div class="text-h6">Sign Up</div>
-                    <i class="tw-text-gray-700 tw-text-xs">It is So Easy Bro</i>
+                <q-card-section class="row items-center q-pb-md">
+                    <div>
+                        <div class="text-h6">Sign Up</div>
+                        <i class="tw-text-gray-700 tw-text-xs">It is So Easy Bro</i>
+                    </div>
+                    <q-space />
+                    <q-btn icon="close" flat round dense v-close-popup />
                 </q-card-section>
 
                 <q-separator />
@@ -56,7 +60,7 @@
                     </div>
                 </q-card-section>
 
-                <q-card-actions align="right" class="bg-white text-teal">
+                <q-card-actions  class="text-primary">
                 </q-card-actions>
             </q-card>
         </q-dialog>

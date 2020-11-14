@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="tw-flex tw-justify-center tw-h-screen">
-        <div class="tw-pt-5 tw-pt-20" style=" width: 100%; max-width: 350px;">
+        <div class="tw-pt-20" style=" width: 100%; max-width: 350px;">
             <q-card flat bordered>
                 <q-card-section>
                     <div class="text-h6">OakHouse Technology</div>

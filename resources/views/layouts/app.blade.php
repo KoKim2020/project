@@ -26,6 +26,10 @@
             @else --}}
                 <nav-bar class="tw-hidden md:tw-block" site_img="{{ asset('site_img.jpg') }}">
                     @guest
+                        <div>
+                            <q-btn flat color="primary" label="Login" type="a" href="{{ route('login') }}" no-caps />
+                        </div>
+                        <q-btn outline rounded  color="primary" no-caps   type="a" href="{{ route('register') }}" label="Register" />
                     @else
                         <account-setting>
                             @csrf

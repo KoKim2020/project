@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class ProfessionController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('create')->only('index');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +34,7 @@ class ProfessionController extends Controller
      */
     public function create()
     {
-        //
+        return "success";
     }
 
     /**
