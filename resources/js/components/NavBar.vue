@@ -2,7 +2,7 @@
 	<div class="">
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-9 bg-grey-3">	
-				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
+				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
 				<q-btn flat type="a" :href="homeUrl"   icon="fas fa-home" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Home"/>
 				<!-- Projects -->
@@ -71,6 +71,9 @@ export default {
 	methods: {
 		redirectUrl () {
 			window.location.href = route('coming_soon')
+		},
+		redirectHome () {
+			window.location.href = route('home')
 		}
 	}
 }

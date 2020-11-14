@@ -40,7 +40,7 @@
                     </q-item>
                 </q-list>
             </q-btn-dropdown>
-            <q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase">OakHouse Technology</q-toolbar-title>
+            <q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase" @click="homeUrl">OakHouse Technology</q-toolbar-title>
             <slot></slot>
         </q-toolbar>
     </div>
@@ -56,7 +56,6 @@ export default {
 	created (){
 		var url = window.location.pathname;
 		this.currentUrl = url
-		console.log(route('home'))
 	},
 	methods: {
 		comingSoonUrl () {
