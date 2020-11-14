@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Author;
+use App\Tag;
 use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
@@ -16,5 +17,9 @@ class Post extends Model
 
     public function getImgUrlAttribute($value){
         return asset(Storage::url($this->image));
+    }
+    
+    public function tag(){
+        return $this->belongsToMany(Tag::class, 'post_tag');
     }
 }

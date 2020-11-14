@@ -47,6 +47,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findorFail($id);
+        $post->load('tag');
         return view('post_detail', [
             'post' => $post
         ]);

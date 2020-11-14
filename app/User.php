@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use App\Role;
+use App\Tag;
 class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
     use Notifiable;
@@ -41,6 +42,10 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 
     public function getProfileImgAttribute($value){
         return asset(Storage::url($this->avatar));
+    }
+
+    public function tag(){
+        return $this->belongsToMany('App\Models\Role', 'role_user');
     }
 
 }
