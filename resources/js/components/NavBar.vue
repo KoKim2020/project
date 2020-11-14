@@ -2,6 +2,9 @@
 	<div class="">
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-9 bg-grey-3">	
+				<q-avatar>
+					<img :src="site_img">
+				</q-avatar>
 				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
 				<q-btn flat type="a" :href="homeUrl"   icon="fas fa-home" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Home"/>
@@ -56,6 +59,7 @@
 
 <script>
 export default {
+	props: ['site_img'],
 	data () {
 		return {
 			currentUrl: '',

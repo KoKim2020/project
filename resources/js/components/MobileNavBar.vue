@@ -48,11 +48,6 @@
 
 <script>
 export default {
-	data () {
-		return {
-		
-		}
-	},
 	created (){
 		var url = window.location.pathname;
 		this.currentUrl = url

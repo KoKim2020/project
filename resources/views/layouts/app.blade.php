@@ -24,7 +24,7 @@
         <div class="tw-font-sans">
             {{-- @guest
             @else --}}
-                <nav-bar class="tw-hidden md:tw-block">
+                <nav-bar class="tw-hidden md:tw-block" site_img="{{ asset('site_img.jpg') }}">
                     @guest
                     @else
                         <account-setting>
