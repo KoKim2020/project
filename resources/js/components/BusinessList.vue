@@ -1,6 +1,6 @@
 <template>
     <div class="q-pa-md" style="max-width: 350px">
-        <q-list >
+        <q-list @click="alert = true">
             <q-item>
                 <q-item-section>
                     <q-item-label class="text-no-wrap">OAKHOUSE ELECTRONICS STORE</q-item-label>
@@ -97,5 +97,30 @@
                 <q-item-section>RC Cars</q-item-section>
             </q-item>
         </q-list>
+        <q-dialog v-model="alert">
+            <q-card>
+                <q-card-section>
+                    <div class="text-h6">Alert</div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                    This Feature Will Be Coming Soon.
+                </q-card-section>
+
+                <q-card-actions align="right">
+                    <q-btn flat label="OK" color="primary" v-close-popup />
+                </q-card-actions>
+            </q-card>
+        </q-dialog>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            alert: false
+        }
+    }
+}
+</script>
