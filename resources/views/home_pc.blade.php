@@ -1,5 +1,5 @@
 <div class="tw-container tw-mx-auto tw-px-4">
-    <div class="tw-flex tw-p-12">
+    <div class="tw-flex tw-py-6">
         {{-- bussiness --}}
         <div class="tw-w-1/4">
             <business-list></business-list>
