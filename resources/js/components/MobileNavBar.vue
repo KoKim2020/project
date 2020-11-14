@@ -38,20 +38,20 @@
                             <q-item-label class="text-no-wrap">Add A Post</q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-separator spaced />
-                    <q-item clickable v-close-popup>
+                    <q-separator spaced  v-if="user.length === 0"/>
+                    <q-item clickable v-close-popup v-if="user.length === 0">
                         <q-item-section class="text-center bg-teal-2" @click="loginUrl">
                             <q-item-label class="text-no-wrap" >Login</q-item-label>
                         </q-item-section>
                     </q-item>
-                    <q-item clickable v-close-popup>
+                    <q-item clickable v-close-popup  v-if="user.length === 0">
                         <q-item-section class="text-center bg-teal-4" @click="registerUrl">
                             <q-item-label class="text-no-wrap text-white">Register</q-item-label>
                         </q-item-section>
                     </q-item>
                 </q-list>
             </q-btn-dropdown>
-            <q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase" @click="homeUrl">OakHouse Technology</q-toolbar-title>
+            <q-toolbar-title class="tw-font-sans text-primary text-weight-bolder tw-uppercase " @click="homeUrl">OakHouse-Tech</q-toolbar-title>
             <slot></slot>
         </q-toolbar>
     </div>
@@ -59,7 +59,7 @@
 
 <script>
 export default {
-	
+    props: ['user', 'site_img'],
 	methods: {
 		comingSoonUrl () {
 			window.location.href = route('coming_soon')

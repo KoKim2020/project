@@ -36,7 +36,7 @@
                         </account-setting>
                     @endguest
                 </nav-bar>
-                <mobile-nav-bar  class="tw-block md:tw-hidden">
+                <mobile-nav-bar  class="tw-block md:tw-hidden" user="{{ $user }}" site_img="{{ asset('site_img.jpg') }}">
                     @guest
                     @else
                         <account-setting>
