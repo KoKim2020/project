@@ -4,7 +4,7 @@
         <q-dialog
             v-model="alert"
         >
-            <q-card style="width: 500px; max-width: 80vw;" class="tw-font-sans">
+            <q-card style="width: 400px; max-width: 80vw;" class="tw-font-sans">
                 <q-card-section class="row items-center q-pb-md">
                     <div>
                         <div class="text-h6">Sign Up</div>
@@ -18,7 +18,7 @@
 
                 <q-card-section class="q-pt-md">
                     <div class="tw-flex tw-justify-center">
-                        <div class="tw-w-2/3 q-gutter-y-md column">
+                        <div class="q-gutter-y-md column">
                             <q-input 
                                 filled 
                                 v-model="formData.name" 

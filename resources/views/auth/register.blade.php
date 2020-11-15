@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="tw-block md:tw-hidden">
-                        <div class="tw-flex tw-justify-center tw-mb-3">
+                        <div class="tw-flex tw-justify-center tw-mb-5">
                             <register-form></register-form>
                         </div>                        
                     </div>
