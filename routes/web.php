@@ -26,9 +26,11 @@ Route::get('/coming_soon', 'HomeController@comingSoon')->name('coming_soon');
 
 
 Route::get('/test', function() {
-    $url = Storage::url('images/c9WR6sm4.png');
-    return $url;
+    return view('test');
 });
+
+Route::post('/test/store', 'TestController@store')->name('test.store');
+
 
 // Route::resource('/test', 'TestController');
 

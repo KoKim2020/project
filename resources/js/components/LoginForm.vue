@@ -1,5 +1,5 @@
 <template>
-    <div class="q-gutter-y-md column" style="max-width: 300px">
+    <div class="q-gutter-y-sm column" style="max-width: 300px">
         <q-input 
             rounded 
             outlined 
@@ -24,8 +24,11 @@
                 />
             </template>
         </q-input>
+
+        <q-checkbox  v-model="remember" val="remember" label="Remember Me" />
+
         <div class="row justify-between">
-            <q-btn flat type="a" href="" no-caps push color="primary" label="Forgot Password?" />
+            <q-btn flat type="a" :href="forgetPasswordUrl" no-caps push color="primary" label="Forgot Password?" />
             <q-btn label="Login" no-caps push type="submit" color="primary" @click="logIn"/>
         </div>
     </div>
@@ -37,9 +40,11 @@ export default {
         return {
             formData: {
                 email: '',
-                password: ''
+                password: '',
             },
+            remember: false,
             isPwd: true,
+            forgetPasswordUrl: route('password.request')
         }
     },
     created() {
@@ -47,6 +52,10 @@ export default {
     },
     methods: {
         logIn() {
+            // add remember property to formData
+            if(this.remember) {
+                this.$set(this.formData, 'remember' , true)
+            }
             axios
             .post('/login', this.formData)
             .then(response => {

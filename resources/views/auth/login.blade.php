@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="tw-flex tw-justify-center tw-h-screen">
         <div class="tw-pt-20" style=" width: 100%; max-width: 350px;">
             <q-card flat bordered>

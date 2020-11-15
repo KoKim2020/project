@@ -39,6 +39,7 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $file_name = $this->create();
         Storage::put('images/'.$file_name, file_get_contents($request->file_data));
         return "success";
