@@ -2,10 +2,12 @@
     <div>
         <q-btn push color="primary" no-caps label="Add A Post" @click="alert = true"/>
         <q-dialog v-model="alert">
-            <q-card>
+            <q-card style="width: 520px; max-width: 80vw;">
                 <q-card-section>
                     <div class="text-h6">Create a Post</div>
                 </q-card-section>
+
+                {{ content }}
 
                 <q-card-section class="q-pt-none">
                     <!-- Two-way Data-Binding -->
@@ -29,13 +31,13 @@
 </template>
 
 <script>
+
     export default {
         data () {
             return {
                 alert: false,
-                content: '<h2>I am Example</h2>',
+                content: '<p>Write a Post Here.</p',
                 editorOption: {
-                // Some Quill options...
                 }
             }
         },
@@ -67,3 +69,10 @@
         // }
     }
 </script>
+
+<style >
+    .ql-editor{
+        min-height: 300px;
+    }
+
+</style>
