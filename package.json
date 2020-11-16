@@ -30,6 +30,7 @@
         "tailwindcss": "^1.9.5",
         "vee-validate": "^2.1.15",
         "vee-validate-laravel": "^1.1.0",
-        "vue-advanced-cropper": "^0.17.6"
+        "vue-advanced-cropper": "^0.17.6",
+        "vue-quill-editor": "^3.0.6"
     }
 }

@@ -37,7 +37,7 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-3 bg-grey-3">
-				<q-btn push color="primary" no-caps  type="a" :href="createPostUrl" label="Add A Post" />
+				<add-post></add-post>
                 <q-space />
 				<slot></slot>
 			</q-toolbar>
@@ -65,7 +65,6 @@ export default {
 			currentUrl: '',
 			homeUrl: route('home'),
 			comingSoonUrl: route('coming_soon'),
-			createPostUrl: route('post.create'),
 		}
 	},
 	created (){
