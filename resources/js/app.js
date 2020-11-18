@@ -45,9 +45,9 @@ import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
 import Quill from 'quill';
-import ImageCompress from 'quill-image-compress';
+import  ImageResize  from 'quill-image-resize-vue';
 
-Quill.register('modules/imageCompress', ImageCompress);
+Quill.register('modules/imageResize', ImageResize);
 var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
@@ -71,13 +71,13 @@ var toolbarOptions = [
 Vue.use(VueQuillEditor, {
     modules: {
         // ...
-        imageCompress: {
-            quality: 0.7, // default
-            maxWidth: 500, // default
-            maxHeight: 500, // default
-            imageType: 'image/jpeg', // default
-            debug: true, // default
-            
+        imageResize: {
+            displayStyles: {
+                backgroundColor: 'black',
+                border: 'none',
+                color: 'white'
+            },
+            modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
         },
         toolbar: toolbarOptions
     }

@@ -28,6 +28,7 @@
         "quasar": "^1.14.2",
         "quasar-extras": "^2.0.9",
         "quill-image-compress": "^1.2.11",
+        "quill-image-resize-vue": "^1.0.4",
         "tailwindcss": "^1.9.5",
         "vee-validate": "^2.1.15",
         "vee-validate-laravel": "^1.1.0",
