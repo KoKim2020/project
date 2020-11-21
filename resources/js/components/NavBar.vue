@@ -7,27 +7,40 @@
 				</q-avatar>
 				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Technology</q-toolbar-title>
 				<!-- Home -->
-				<q-btn flat type="a" :href="homeUrl"   icon="fas fa-home" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Home"/>
+				<q-btn flat type="a" :href="homeUrl"   icon="rss_feed" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Tech Feed"/>
 				<!-- Projects -->
-				<q-btn-dropdown flat color="primary" label="Projects">
+				<q-btn-dropdown flat color="primary" label="Electronics">
 					<q-list>
 						<q-item clickable v-close-popup>
 							<q-item-section @click="redirectUrl">
-								<q-item-label class="text-primary">Arduino Projects</q-item-label>
+								<q-item-label class="text-primary">Arduino Electroincs Projects</q-item-label>
 							</q-item-section>
 						</q-item>
 
 						<q-item clickable v-close-popup>
 							<q-item-section @click="redirectUrl">
-								<q-item-label class="text-primary">Respberry Pi Projects</q-item-label>
+								<q-item-label class="text-primary">Respberry Electroincs Pi Projects</q-item-label>
 							</q-item-section>
 						</q-item>
 					</q-list>
 				</q-btn-dropdown>
-				<!-- Electronics -->
-				<q-btn flat type="a" :href="comingSoonUrl" push color="primary" label="Electronics" />
-				<!-- Robotics -->
-				<q-btn flat type="a" :href="comingSoonUrl" push color="primary" label="Robotics" />
+
+				<q-btn-dropdown flat color="primary" label="Robotics">
+					<q-list>
+						<q-item clickable v-close-popup>
+							<q-item-section @click="redirectUrl">
+								<q-item-label class="text-primary">Arduino Robotics Projects</q-item-label>
+							</q-item-section>
+						</q-item>
+
+						<q-item clickable v-close-popup>
+							<q-item-section @click="redirectUrl">
+								<q-item-label class="text-primary">Respberry Pi Robotics Projects</q-item-label>
+							</q-item-section>
+						</q-item>
+					</q-list>
+				</q-btn-dropdown>
+		
 				<q-input rounded outlined dense>
 					<template v-slot:append>
 						<!-- <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" /> -->

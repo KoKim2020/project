@@ -11,25 +11,25 @@
 
                     <q-item clickable v-close-popup>
                         <q-item-section @click="comingSoonUrl">
-                            <q-item-label>Arduino Projects</q-item-label>
+                            <q-item-label>Arduino Electronics Projects</q-item-label>
                         </q-item-section>
                     </q-item>
 
                     <q-item clickable v-close-popup>
                         <q-item-section  @click="comingSoonUrl">
-                            <q-item-label class="text-no-wrap">Respberry Pi Projects</q-item-label>
+                            <q-item-label class="text-no-wrap">Respberry Pi Electronics Projects</q-item-label>
+                        </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-close-popup>
+                        <q-item-section @click="comingSoonUrl">
+                            <q-item-label>Arduino Robotics Projects</q-item-label>
                         </q-item-section>
                     </q-item>
 
                     <q-item clickable v-close-popup>
                         <q-item-section  @click="comingSoonUrl">
-                            <q-item-label class="text-no-wrap">Electronics</q-item-label>
-                        </q-item-section>
-                    </q-item>
-
-                    <q-item clickable v-close-popup>
-                        <q-item-section  @click="comingSoonUrl">
-                            <q-item-label class="text-no-wrap">Robotics</q-item-label>
+                            <q-item-label class="text-no-wrap">Respberry Pi Robotics Projects</q-item-label>
                         </q-item-section>
                     </q-item>
 

@@ -27,7 +27,7 @@
                 @isset($post->image) 
                     <img class="tw-w-full" src="{{ $post->img_url }}" alt="Sunset in the mountains">
                 @endisset
-                
+
                 <div class="tw-py-4">
                     <p class="tw-text-gray-700 tw-text-base">
                         {!! $post->body !!}
