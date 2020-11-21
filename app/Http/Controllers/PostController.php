@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 class PostController extends Controller
@@ -124,5 +125,16 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Get categories
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getCategory()
+    {
+        return Category::all();
     }
 }

@@ -41,3 +41,4 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Posts
 Route::resource('/post', 'PostController');
+Route::get('/category', 'PostController@getCategory');

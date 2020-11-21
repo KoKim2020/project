@@ -44,8 +44,6 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         return asset(Storage::url($this->avatar));
     }
 
-    public function tag(){
-        return $this->belongsToMany('App\Models\Role', 'role_user');
-    }
+    
 
 }

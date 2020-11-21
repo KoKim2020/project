@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -27,9 +29,8 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'DESC')->get();
-        // Get the currently authenticated user...
         return view('home', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 

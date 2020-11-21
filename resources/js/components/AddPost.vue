@@ -4,13 +4,28 @@
         <q-dialog v-model="alert">
             <q-card style="width: 520px; max-width: 80vw;">
                 <q-card-section  class="row items-center q-pb-md">
-                    <div class="text-h6">Create a Post</div>
+                    <div class="text-h6">Create Post</div>
                     <q-space />
                     <q-btn icon="close" flat round dense v-close-popup />
                 </q-card-section>
-    
                 <q-card-section class="q-pt-none q-gutter-md">
-                    <!-- Two-way Data-Binding -->
+                    
+                    <q-select  
+                        outlined  
+                        v-model="formData.category_id" 
+                        :options="categories" 
+                        label="Select Post Category"
+                        option-value="id"
+                        option-label="name"
+                        emit-value
+                        map-options
+                    />
+
+                    <div class="q-gutter-sm" v-if="formData.category_id == 2 || formData.category_id == 3">
+                        <q-radio v-model="formData.microcontroller_id" val="line" label="use Arduino" />
+                        <q-radio v-model="formData.microcontroller_id" val="rectangle" label="use Respberry Pi" />
+                        <q-radio v-model="formData.microcontroller_id" val="ellipse" label="None" />
+                    </div>
                     <q-input outlined v-model="formData.title" label="Title" />
 
                     <quill-editor
@@ -59,8 +74,11 @@
                 formData: {
                     title: '',
                     body: '<p>Write Post Here.</p>',
-                    images: []
+                    images: [],
+                    category_id: null,
+                    microcontroller_id: ''
                 },
+                categories: {},
                 content: {},
                 response: {},
                 editorOption: {
@@ -79,9 +97,10 @@
                         },
                         imageResize: {
                             modules: ["Resize", "DisplaySize", "Toolbar"]
-                        }
+                        },
+                        
                     }
-                }
+                },
             }
         },
         methods: {
@@ -135,7 +154,17 @@
                     this.response = response.data
                     location.reload();
                 })
+            },
+            getPostCategory() {
+                axios
+                .get('/category')
+                .then( response => {
+                    this.categories = response.data
+                })
             }
+        },
+        created () {
+            this.getPostCategory()
         },
         computed: {
             editor() {
