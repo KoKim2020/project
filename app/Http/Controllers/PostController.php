@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
 
@@ -31,8 +32,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return "success";
-
+        $random = Str::random(8);
+        return $random . '.'.'png';
     }
 
     /**
@@ -43,7 +44,37 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $body = $request->body;
+        $images = $request->images;
+        $post = [
+            'body' => $body,
+            'images' => $images
+        ];
+        $imgUrls = [];
+
+        $p = new Post();
+        $p->author_id = 1;
+        $p->title = $request->title;
+        $p->slug = Str::random(7);
+        $p->featured = 1;
+
+
+        foreach ($images as $key => $image) {
+            $file_name = $this->create();
+
+            Storage::put('public/images/' . $file_name, file_get_contents($image));
+            $url = Storage::url('images/' . $file_name);
+            array_push($imgUrls,  asset($url));
+        }
+
+    
+        foreach ($images as $key => $image) {
+             $post['body'] =  str_replace( $image, $imgUrls[$key] , $post['body']); // 1st search, 2 replace, 3 string
+        }
+        $p->body = $post['body'];
+
+        $p->save();
+        return "success";
     }
 
     /**

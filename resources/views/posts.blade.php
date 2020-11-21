@@ -22,11 +22,13 @@
             <q-card-section>
                 <div class="text-h6">{{ $post->title }}</div>
             </q-card-section>
-
-            <img src="{{ $post->img_url }}">
+            {{-- show if image is not null --}}
+            @isset($post->image) 
+                <img src="{{ $post->img_url }}">
+            @endisset
 
             <q-card-section class="q-pt-md">
-                {!! (Str::limit( strip_tags($post->body), 50 )) !!}
+                {!! (Str::limit( $post->body, 500 )) !!}
             </q-card-section>
 
             <q-card-actions  align="right">

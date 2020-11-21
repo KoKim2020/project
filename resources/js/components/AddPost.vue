@@ -3,28 +3,28 @@
         <q-btn push color="primary" no-caps label="Add A Post" @click="alert = true"/>
         <q-dialog v-model="alert">
             <q-card style="width: 520px; max-width: 80vw;">
-                <q-card-section>
+                <q-card-section  class="row items-center q-pb-md">
                     <div class="text-h6">Create a Post</div>
+                    <q-space />
+                    <q-btn icon="close" flat round dense v-close-popup />
                 </q-card-section>
-
-                {{ content }}
-
-                <q-card-section class="q-pt-none">
+    
+                <q-card-section class="q-pt-none q-gutter-md">
                     <!-- Two-way Data-Binding -->
+                    <q-input outlined v-model="formData.title" label="Title" />
+
                     <quill-editor
                         ref="myQuillEditor"
-                        v-model="content"
+                        v-model="formData.body"
                         :options="editorOption"
                         @blur="onEditorBlur($event)"
                         @focus="onEditorFocus($event)"
                         @ready="onEditorReady($event)"
-                        rows="20"
                     />
                 </q-card-section>
-
-                <q-card-actions align="right">
-                    <!-- <q-btn flat label="test" color="primary" @click="test" /> -->
-                    <q-btn flat label="OK" color="primary" v-close-popup />
+                <input ref="upload" type="file" hidden id="imageUpload" @change="imageUpload($event)">
+                <q-card-actions align="center" class="q-pb-md">
+                    <q-btn  push label="Post" color="primary" @click="test"  style="width: 150px" />
                 </q-card-actions>
             </q-card>
         </q-dialog>
@@ -56,14 +56,24 @@
         data () {
             return {
                 alert: false,
-                content: '<p>Write a Post Here.</p',
+                formData: {
+                    title: '',
+                    body: '<p>Write Post Here.</p>',
+                    images: []
+                },
+                content: {},
+                response: {},
                 editorOption: {
                     modules: {
                         toolbar: {
                             container: toolbarOptions,
                             handlers: {
-                                image: function(value) {
-                                    console.log(value)
+                                image (value) {
+                                    if (value) {
+                                        document.querySelector('#imageUpload').click();
+                                    } else {
+                                        this.quill.format('image', false);
+                                    }
                                 }
                             }
                         },
@@ -87,6 +97,44 @@
             onEditorChange({ quill, html, text }) {
                 console.log('editor change!', quill, html, text)
                 this.content = html
+            },
+            imageUpload(event) {
+                var vm = this
+                var input = event.target;
+                let quill = this.editor;
+                if (input.files[0].type.includes("image")) {
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        // output of reader is base 64 encoded image
+                        let base64data = reader.result;
+                        vm.formData.images.push(base64data);
+                        
+                        // Get cursor location
+                        let length = quill.getSelection().index;
+
+                        // Insert image at cursor location
+                        quill.insertEmbed(length, 'image', base64data);
+
+                        // Set cursor to the end
+                        quill.setSelections(length + 1);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                    // show cropper modal
+                }   else {
+                    this.$q.notify({
+                        icon: 'error',
+                        color: 'negative',
+                        message: 'Please, choose an image.'
+                    })
+                }
+            },
+            test () {
+                axios 
+                .post('/post', this.formData)
+                .then( response => {
+                    this.response = response.data
+                    location.reload();
+                })
             }
         },
         computed: {
@@ -94,9 +142,7 @@
                 return this.$refs.myQuillEditor.quill
             }
         },
-        // created() {
-        //     console.log('this is current quill instance object', this.editor)
-        // }
+
     }
 </script>
 

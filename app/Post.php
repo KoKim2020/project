@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
+    protected $fillable = ['author_id', 'title', 'body', 'status', 'body', 'slug', 'featured', 'meta_keywords'];
+
     protected $appends = ['img_url'];
     public function author()
     {

@@ -8,7 +8,7 @@
                 <q-card-section>
                     <div class="text-h6">Sign Up</div>
                 </q-card-section>
-
+                <pre>{{ formData }}</pre>
                 <q-card-section class="q-pt-none">
                     <div class="tw-flex tw-flex-wrap">
                         <div class="tw-w-full tw-p-2">
