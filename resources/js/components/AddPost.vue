@@ -12,13 +12,15 @@
                     
                     <q-select  
                         outlined  
-                        v-model="formData.category_id" 
+                        v-model="formData.category" 
                         :options="categories" 
                         label="Select Post Category"
                         option-value="id"
                         option-label="name"
                         emit-value
                         map-options
+                        :error-message="errors.first('category')"
+                        :error="errors.has('category')"
                     />
 
                     <div class="q-gutter-sm" v-if="formData.category_id == 2 || formData.category_id == 3">
@@ -26,7 +28,14 @@
                         <q-radio v-model="formData.microcontroller_id" val="rectangle" label="use Respberry Pi" />
                         <q-radio v-model="formData.microcontroller_id" val="ellipse" label="None" />
                     </div>
-                    <q-input outlined v-model="formData.title" label="Title" />
+
+                    <q-input 
+                        outlined 
+                        v-model="formData.title" 
+                        label="Title"
+                        :error-message="errors.first('title')"
+                        :error="errors.has('title')"
+                    />
 
                     <quill-editor
                         ref="myQuillEditor"
@@ -35,7 +44,12 @@
                         @blur="onEditorBlur($event)"
                         @focus="onEditorFocus($event)"
                         @ready="onEditorReady($event)"
+                        :style="[errors.has('body') ? styleObject : '']"
                     />
+                    <div v-show="errors.has('body')" 
+                        class="tw-text-red-700">
+                        {{ errors.first('body') }}
+                    </div>
                 </q-card-section>
                 <input ref="upload" type="file" hidden id="imageUpload" @change="imageUpload($event)">
                 <q-card-actions align="center" class="q-pb-md">
@@ -73,9 +87,9 @@
                 alert: false,
                 formData: {
                     title: '',
-                    body: '<p>Write Post Here.</p>',
+                    body: '',
                     images: [],
-                    category_id: null,
+                    category: null,
                     microcontroller_id: ''
                 },
                 categories: {},
@@ -101,6 +115,9 @@
                         
                     }
                 },
+                styleObject: {
+                    border: '1px solid #fc3903 !important'
+                }
             }
         },
         methods: {
@@ -154,6 +171,9 @@
                     this.response = response.data
                     location.reload();
                 })
+                .catch (error => {
+                    this.$setLaravelValidationErrorsFromResponse(error.response.data);
+                });
             },
             getPostCategory() {
                 axios
@@ -176,5 +196,5 @@
 </script>
 
 <style >
-
+   
 </style>
