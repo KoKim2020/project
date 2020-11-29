@@ -81,7 +81,7 @@ class PostController extends Controller
              $post['body'] =  str_replace( $image, $imgUrls[$key] , $post['body']); // 1st search, 2 replace, 3 string
         }
         $p->body = $post['body'];
-
+        $p->category_id = $request->category;
         $p->save();
         return "success";
     }

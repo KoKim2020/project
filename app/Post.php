@@ -9,9 +9,20 @@ use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
-    protected $fillable = ['author_id', 'title', 'body', 'status', 'body', 'slug', 'featured', 'meta_keywords'];
+    protected $fillable = [
+                            'author_id', 
+                            'title', 
+                            'body', 
+                            'status', 
+                            'body', 
+                            'slug', 
+                            'featured', 
+                            'meta_keywords',
+                            'category_id'
+                        ];
 
     protected $appends = ['img_url'];
+    
     public function author()
     {
         return $this->belongsTo(Author::class, 'author_id');
