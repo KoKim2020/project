@@ -23,10 +23,10 @@
                         :error="errors.has('category')"
                     />
 
-                    <div class="q-gutter-sm" v-if="formData.category_id == 2 || formData.category_id == 3">
-                        <q-radio v-model="formData.microcontroller_id" val="line" label="use Arduino" />
-                        <q-radio v-model="formData.microcontroller_id" val="rectangle" label="use Respberry Pi" />
-                        <q-radio v-model="formData.microcontroller_id" val="ellipse" label="None" />
+                    <div class="q-gutter-sm" v-if="formData.category == 2 || formData.category == 3">
+                        <q-radio v-model="formData.microcontroller_id" val="1" label="use Arduino" />
+                        <q-radio v-model="formData.microcontroller_id" val="2" label="use Respberry Pi" />
+                        <q-radio v-model="formData.microcontroller_id" val="" label="None" />
                     </div>
 
                     <q-input 

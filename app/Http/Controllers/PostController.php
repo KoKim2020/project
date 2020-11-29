@@ -82,6 +82,7 @@ class PostController extends Controller
         }
         $p->body = $post['body'];
         $p->category_id = $request->category;
+        $p->microcontroller_id = $request->microcontroller_id;
         $p->save();
         return "success";
     }

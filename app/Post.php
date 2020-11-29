@@ -18,7 +18,8 @@ class Post extends Model
                             'slug', 
                             'featured', 
                             'meta_keywords',
-                            'category_id'
+                            'category_id',
+                            'microcontroller_id'
                         ];
 
     protected $appends = ['img_url'];
