@@ -52,7 +52,7 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-3 bg-grey-3">
-				<add-post></add-post>
+				<!-- <add-post></add-post> -->
                 <q-space />
 				<slot></slot>
 			</q-toolbar>
