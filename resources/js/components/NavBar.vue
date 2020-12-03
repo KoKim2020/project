@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<div class="row no-wrap shadow-1">
-			<q-toolbar class="col-9 bg-grey-3">	
+			<q-toolbar class="col-10 bg-grey-3">	
 				<q-avatar>
 					<img :src="site_img">
 				</q-avatar>
@@ -51,7 +51,7 @@
 				</q-input>
 			</q-toolbar>
 			
-			<q-toolbar class="col-3 bg-grey-3">
+			<q-toolbar class="col-2 bg-grey-3">
 				<!-- <add-post></add-post> -->
                 <q-space />
 				<slot></slot>
