@@ -1,6 +1,6 @@
 <template>
     <div>
-        <q-btn push color="primary" no-caps label="Add A Post" @click="alert = true"/>
+        <q-btn push color="primary" no-caps label="Add A Post" @click="alert = true" style="font-size: 11px;"  />
         <q-dialog v-model="alert">
             <q-card style="width: 520px; max-width: 80vw;">
                 <q-card-section  class="row items-center q-pb-md">
