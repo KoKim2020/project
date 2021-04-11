@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- <pre>{{ current_user }}</pre> -->
         <q-btn-dropdown
             flat
             color="cyan"
@@ -8,7 +9,7 @@
             >
             <template v-slot:label>
                 <q-avatar size="33px">
-                    <img src="https://cdn.quasar.dev/img/avatar2.jpg">
+                    <img :src="current_user.profile_img">
                 </q-avatar>
             </template>
 
@@ -16,10 +17,10 @@
                 <q-item clickable v-ripple>
                     <div class=" row items-start q-gutter-md">
                         <q-avatar size="52px">
-                            <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                            <img :src="current_user.profile_img">
                         </q-avatar>
                         <q-item-section class="q-pt-sm">
-                            <q-item-label>Kyaw Kyaw</q-item-label>
+                            <q-item-label>{{  current_user.name }}</q-item-label>
                             <q-item-label caption>Electronics Engineer</q-item-label>
                         </q-item-section>
                     </div>
