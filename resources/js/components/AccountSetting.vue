@@ -52,15 +52,12 @@
     </div>
 </template>
 <script>
-export default {
-    data () {
-        return {
-            logOut: route('logout')
-        }
-    },
-    props: ['current_user'],
-    created () {
-        console.log(this.current_user)
+    export default {
+        data () {
+            return {
+                logOut: route('logout')
+            }
+        },
+        props: ['current_user'],
     }
-}
 </script>

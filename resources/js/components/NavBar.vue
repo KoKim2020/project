@@ -52,8 +52,6 @@
 			</q-toolbar>
 			
 			<q-toolbar class="col-2 bg-grey-3">
-				<add-post></add-post> 
-                <q-space />
 				<slot></slot>
 			</q-toolbar>
 		</div>
@@ -85,7 +83,7 @@ export default {
 	created (){
 		var url = window.location.pathname;
 		this.currentUrl = url
-		console.log(route('home'))
+		// console.log(route('home'))
 	},
 	methods: {
 		redirectUrl () {
