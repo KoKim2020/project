@@ -5,7 +5,7 @@
 				<q-avatar>
 					<img :src="site_img">
 				</q-avatar>
-				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Technology</q-toolbar-title>
+				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Tech</q-toolbar-title>
 				<!-- Home -->
 				<q-btn flat type="a" :href="homeUrl"   icon="rss_feed" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Tech Feed"/>
 				<!-- Projects -->
