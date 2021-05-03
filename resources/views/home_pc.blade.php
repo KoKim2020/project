@@ -1,6 +1,6 @@
 <div class="tw-flex tw-py-6">
     {{-- bussiness --}}
-    <div class="tw-w-1/4 tw-ml-10">
+    <div class="tw-w-1/4 tw-ml-5">
         <business-list></business-list>
     </div>
     {{-- news feed --}}

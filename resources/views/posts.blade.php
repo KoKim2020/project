@@ -1,7 +1,7 @@
 
 @foreach ($posts as $post)
     <div class="q-pa-md">
-        <q-card style="width: 100%; max-width: 500px;">
+        <q-card style="width: 100%; max-width: 650px;">
             <q-item class="q-py-md">
                 <q-item-section avatar>
                     <q-avatar>

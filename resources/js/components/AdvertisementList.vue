@@ -98,5 +98,5 @@ export default {
 <style lang="sass" scoped>
     .my-card
         width: 100%
-        max-width: 300px
+        max-width: 370px
 </style>
