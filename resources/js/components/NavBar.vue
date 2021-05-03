@@ -41,8 +41,6 @@
 					</q-list>
 				</q-btn-dropdown>
 
-				<q-btn flat type="a" :href="comingSoonUrl" push color="primary" label="Tutorials" />
-
 				<q-input rounded outlined dense>
 					<template v-slot:append>
 						<!-- <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" /> -->
