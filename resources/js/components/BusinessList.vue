@@ -1,5 +1,5 @@
 <template>
-    <div class="q-pa-md" style="max-width: 350px">
+    <div class="q-pa-md">
         <q-list @click="alert = true">
             <q-item>
                 <q-item-section>
