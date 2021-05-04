@@ -25,17 +25,7 @@ Auth::routes(['verify' => true]); // //
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/coming_soon/{category_id}', 'HomeController@comingSoon')->name('coming_soon');
 
-Route::get('/select_category/{category}',function($category) {
-    if ($category == 'arduino_electronics') {
-        return Post::where('category_id', 2)->where('microcontroller_id', 1)->get();
-    } elseif($category == 'resp_electronics') {
-        return Post::where('category_id', 2)->where('microcontroller_id', 2)->get();
-    }elseif($category == 'arduino_robotics') {
-        return Post::where('category_id', 3)->where('microcontroller_id', 1)->get();
-    }elseif($category == 'resp_robotics') {
-        return Post::where('category_id', 3)->where('microcontroller_id', 2)->get();
-    }
-})->name('select_category');
+Route::get('/select_category/{category}', 'PostController@selectCategory')->name('select_category');
 
 Route::get('/test', function() {
     return view('test');

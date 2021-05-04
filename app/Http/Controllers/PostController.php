@@ -146,4 +146,22 @@ class PostController extends Controller
     {
         return Category::all();
     }
+
+    // get posts of selected categories
+    public function selectCategory($category) {
+        if ($category == 'arduino_electronics') {
+            $posts = Post::where('category_id', 2)->where('microcontroller_id', 1)->get();
+            return view('home', [
+                'posts' => $posts
+            ]);
+        } elseif($category == 'resp_electronics') {
+            return Post::where('category_id', 2)->where('microcontroller_id', 2)->get();
+        }elseif($category == 'arduino_robotics') {
+            return Post::where('category_id', 3)->where('microcontroller_id', 1)->get();
+        }elseif($category == 'resp_robotics') {
+            return Post::where('category_id', 3)->where('microcontroller_id', 2)->get();
+        }else {
+            return "fuck you";
+        }
+    }
 }
