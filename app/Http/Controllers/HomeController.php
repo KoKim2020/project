@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'DESC')->get();
+        $posts = Post::where('category_id', 1)->orderBy('created_at', 'DESC')->get();
         return view('home', [
             'posts' => $posts,
         ]);

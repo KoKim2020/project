@@ -150,22 +150,22 @@ class PostController extends Controller
     // get posts of selected categories
     public function selectCategory($category) {
         if ($category == 'arduino_electronics') {
-            $posts = Post::where('category_id', 2)->where('microcontroller_id', 1)->get();
+            $posts = Post::where('category_id', 2)->where('microcontroller_id', 1)->orderBy('created_at', 'DESC')->get();
             return view('home', [
                 'posts' => $posts
             ]);
         } elseif($category == 'resp_electronics') {
-            $posts = Post::where('category_id', 2)->where('microcontroller_id', 2)->get();
+            $posts = Post::where('category_id', 2)->where('microcontroller_id', 2)->orderBy('created_at', 'DESC')->get();
             return view('home', [
                 'posts' => $posts
             ]);
         }elseif($category == 'arduino_robotics') {
-            $posts = Post::where('category_id', 3)->where('microcontroller_id', 1)->get();
+            $posts = Post::where('category_id', 3)->where('microcontroller_id', 1)->orderBy('created_at', 'DESC')->get();
             return view('home', [
                 'posts' => $posts
             ]);
         }elseif($category == 'resp_robotics') {
-            $posts = Post::where('category_id', 3)->where('microcontroller_id', 2)->get();
+            $posts = Post::where('category_id', 3)->where('microcontroller_id', 2)->orderBy('created_at', 'DESC')->get();
             return view('home', [
                 'posts' => $posts
             ]);
