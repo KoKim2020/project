@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use App\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/coming_soon/{category_id}', 'HomeController@comingSoon')->name('coming_soon');
 
 Route::get('/coming_soon/{test}',function($test) {
-    return $test ;
+    return Post::all();
 })->name('coming_soon');
 
 Route::get('/test', function() {
