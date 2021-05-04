@@ -12,13 +12,13 @@
 				<q-btn-dropdown flat color="primary" label="Electronics">
 					<q-list>
 						<q-item clickable v-close-popup>
-							<q-item-section @click="redirectUrl">
+							<q-item-section @click="redirectUrl('arduino_electronics')">
 								<q-item-label class="text-primary">Arduino Electroincs Projects</q-item-label>
 							</q-item-section>
 						</q-item>
 
 						<q-item clickable v-close-popup>
-							<q-item-section @click="redirectUrl">
+							<q-item-section @click="redirectUrl('resp_electronics')">
 								<q-item-label class="text-primary">Respberry Electroincs Pi Projects</q-item-label>
 							</q-item-section>
 						</q-item>
@@ -28,13 +28,13 @@
 				<q-btn-dropdown flat color="primary" label="Robotics">
 					<q-list>
 						<q-item clickable v-close-popup>
-							<q-item-section @click="redirectUrl">
+							<q-item-section @click="redirectUrl('arduino_robotics')">
 								<q-item-label class="text-primary">Arduino Robotics Projects</q-item-label>
 							</q-item-section>
 						</q-item>
 
 						<q-item clickable v-close-popup>
-							<q-item-section @click="redirectUrl">
+							<q-item-section @click="redirectUrl('resp_robotics')">
 								<q-item-label class="text-primary">Respberry Pi Robotics Projects</q-item-label>
 							</q-item-section>
 						</q-item>
@@ -84,8 +84,8 @@ export default {
 		// console.log(route('home'))
 	},
 	methods: {
-		redirectUrl () {
-			window.location.href = route('coming_soon', 'testing')
+		redirectUrl (category) {
+			window.location.href = route('coming_soon', category)
 			// console.log(route('coming_soon', 'testing'))
 		},
 		redirectHome () {
