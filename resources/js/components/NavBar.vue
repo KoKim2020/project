@@ -85,7 +85,7 @@ export default {
 	},
 	methods: {
 		redirectUrl () {
-			window.location.href = route('coming_soon')
+			window.location.href = route('coming_soon', 'testing')
 		},
 		redirectHome () {
 			window.location.href = route('home')
