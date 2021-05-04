@@ -144,7 +144,7 @@ class PostController extends Controller
      */
     public function getCategory()
     {
-        return Category::all();
+        return Category::all(); //
     }
 
     // get posts of selected categories
