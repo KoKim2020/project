@@ -24,9 +24,9 @@ Auth::routes(['verify' => true]); // //
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/coming_soon/{category_id}', 'HomeController@comingSoon')->name('coming_soon');
 
-Route::get('/coming_soon/{category_id}',function() {
-    return $category_id;
-});
+Route::get('/coming_soon/{test}',function($test) {
+    return $test ;
+})->name('coming_soon');
 
 Route::get('/test', function() {
     return view('test');
