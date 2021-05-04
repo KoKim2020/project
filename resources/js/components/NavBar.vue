@@ -75,7 +75,6 @@ export default {
 		return {
 			currentUrl: '',
 			homeUrl: route('home'),
-			comingSoonUrl: route('coming_soon'),
 		}
 	},
 	created (){
@@ -85,8 +84,7 @@ export default {
 	},
 	methods: {
 		redirectUrl (category) {
-			window.location.href = route('coming_soon', category)
-			// console.log(route('coming_soon', 'testing'))
+			window.location.href = route('select_category', category)
 		},
 		redirectHome () {
 			window.location.href = route('home')
