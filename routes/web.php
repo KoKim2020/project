@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
 //     return view('welcome');
 // })->middleware('guest');
 
-Auth::routes(['verify' => true]); //
+Auth::routes(['verify' => true]); // //
 
 
 Route::get('/', 'HomeController@index')->name('home');
