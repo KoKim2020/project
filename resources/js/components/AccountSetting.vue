@@ -21,7 +21,7 @@
                         </q-avatar>
                         <q-item-section class="q-pt-sm">
                             <q-item-label>{{  current_user.name }}</q-item-label>
-                            <q-item-label caption>Electronics Engineer</q-item-label>
+                            <!-- <q-item-label caption>Electronics Engineer</q-item-label> -->
                         </q-item-section>
                     </div>
                 </q-item>
