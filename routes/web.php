@@ -31,7 +31,7 @@ Route::get('/test', function() {
     return Post::all();
 });
 
-Route::post('/test/store', 'TestController@store')->name('test.store');
+Route::post('/test/store', 'TestController@store')->name('test.store'); //
 
 
 // Route::resource('/test', 'TestController');
