@@ -1,6 +1,6 @@
 <template>
 	<div class="">
-		<pre>{{ currentUrl }}</pre>
+		<!-- <pre>{{ currentUrl }}</pre> -->
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-10 bg-grey-3">	
 				<q-avatar>
