@@ -91,10 +91,14 @@
                     })
                 }
                 else {
+                    // show loading while registering
+                    this.showLoading()
                     axios
                     .post(route('register'), this.formData)
                     .then(response => {
                         if(response.data.status == 'success'){
+                            // hide loading after success
+                            this.hideLoading()
                             this.$q.notify({
                                 color: 'green-4',
                                 textColor: 'white',
@@ -107,9 +111,23 @@
                         }
                     })
                     .catch (error => {
+                        // hide loading when error occurs
+                        this.hideLoading()
                         this.$setLaravelValidationErrorsFromResponse(error.response.data);
                     });
                 }
+            },
+            showLoading () {
+                this.$q.loading.show({
+                    message: 'Registering <b>process</b> is in progress.<br/><span class="text-orange text-weight-bold">Hang on...</span>'
+                })
+            },
+            hideLoading () {
+                // hiding in 3s
+                this.timer = setTimeout(() => {
+                    this.$q.loading.hide()
+                    this.timer = void 0
+                }, 3000)
             }
         }
     }
