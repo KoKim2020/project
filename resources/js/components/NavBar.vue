@@ -27,7 +27,9 @@
 					</q-list>
 				</q-btn-dropdown>
 
-				<q-btn-dropdown flat color="primary" label="Robotics">
+				<q-btn-dropdown flat label="Robotics"
+					:color="currentUrl == c || currentUrl == d ? 'red' : 'primary'"
+				>
 					<q-list>
 						<q-item clickable v-close-popup>
 							<q-item-section @click="redirectUrl('arduino_robotics')">
@@ -77,7 +79,9 @@ export default {
 		return {
 			homeUrl: route('home'),
 			a: route('select_category', 'arduino_electronics'),
-			b: route('select_category', 'resp_electronics') 
+			b: route('select_category', 'resp_electronics'),
+			c: route('select_category', 'arduino_robotics'),
+			d: route('select_category', 'resp_robotics')
 		}
 	},
 	computed: {
