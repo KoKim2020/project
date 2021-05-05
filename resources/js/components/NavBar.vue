@@ -1,5 +1,6 @@
 <template>
 	<div class="">
+		<pre>{{ currentUrl }}</pre>
 		<div class="row no-wrap shadow-1">
 			<q-toolbar class="col-10 bg-grey-3">	
 				<q-avatar>
@@ -7,9 +8,10 @@
 				</q-avatar>
 				<q-toolbar-title class="text-primary text-weight-bolder tw-uppercase tw-cursor-pointer" @click="redirectHome">OakHouse Tech</q-toolbar-title>
 				<!-- Home -->
-				<q-btn flat type="a" :href="homeUrl"   icon="rss_feed" :color="currentUrl == '/' || currentUrl == '//'  ? 'indigo' : 'primary'" label="Tech Feed"/>
+				<q-btn flat type="a" :href="homeUrl"   icon="rss_feed" :color="currentUrl + '/' == homeUrl || currentUrl == homeUrl  ? 'red' : 'primary'" label="Tech Feed"/>
 				<!-- Projects -->
-				<q-btn-dropdown flat color="primary" label="Electronics">
+				<q-btn-dropdown flat label="Electronics" 
+					:color="currentUrl == a || currentUrl == b ? 'red' : 'primary'">
 					<q-list>
 						<q-item clickable v-close-popup>
 							<q-item-section @click="redirectUrl('arduino_electronics')">
@@ -73,14 +75,15 @@ export default {
 	props: ['site_img'],
 	data () {
 		return {
-			currentUrl: '',
 			homeUrl: route('home'),
+			a: route('select_category', 'arduino_electronics'),
+			b: route('select_category', 'resp_electronics') 
 		}
 	},
-	created (){
-		var url = window.location.pathname;
-		this.currentUrl = url
-		// console.log(route('home'))
+	computed: {
+		currentUrl: function () {
+			return window.location.href
+		}
 	},
 	methods: {
 		redirectUrl (category) {
