@@ -21,14 +21,14 @@
                         </q-avatar>
                         <q-item-section class="q-pt-sm">
                             <q-item-label>{{  current_user.name }}</q-item-label>
-                            <!-- <q-item-label caption>Electronics Engineer</q-item-label> -->
+                            <q-item-label caption>Electronics Engineer</q-item-label>
                         </q-item-section>
                     </div>
                 </q-item>
 
                 <q-item clickable v-ripple>
                     <q-item-section>
-                        <q-item-label>View Profile</q-item-label>
+                        <q-item-label>See Your Profile</q-item-label>
                     </q-item-section>
                 </q-item>
 

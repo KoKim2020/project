@@ -44,3 +44,6 @@ Route::group(['prefix' => 'admin'], function () {
 // Posts
 Route::resource('/post', 'PostController');
 Route::get('/category', 'PostController@getCategory');
+
+// view profile of Author
+Route::resource('/view_profile', 'AuthorController');
