@@ -28,7 +28,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/select_category/{category}', 'PostController@selectCategory')->name('select_category');
 
 Route::get('/test', function() {
-    return view('test');
+    return Post::all();
 });
 
 Route::post('/test/store', 'TestController@store')->name('test.store');
