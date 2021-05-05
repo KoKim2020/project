@@ -26,7 +26,7 @@
                     </div>
                 </q-item>
 
-                <q-item clickable v-ripple>
+                <q-item clickable v-ripple @click="viewProfile">
                     <q-item-section>
                         <q-item-label>See Your Profile</q-item-label>
                     </q-item-section>
@@ -59,5 +59,10 @@
             }
         },
         props: ['current_user'],
+        methods: {
+            viewProfile () {
+               	window.location.href = route('view_profile.index')
+            }
+        }
     }
 </script>
