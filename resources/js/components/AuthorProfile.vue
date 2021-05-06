@@ -1,10 +1,10 @@
 <template>
     <div>
-        {{ $user.id }}
+        <pre>{{ $user }}</pre>
         <q-card class="my-card" flat bordered>
             <q-item>
                 <q-item-section avatar>
-                    <q-avatar size="160px">
+                    <q-avatar square size="150px">
                         <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
                     </q-avatar>
                 </q-item-section>
