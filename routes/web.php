@@ -46,4 +46,4 @@ Route::resource('/post', 'PostController');
 Route::get('/category', 'PostController@getCategory');
 
 // view profile of Author
-Route::resource('/view_profile', 'AuthorController'); //
+Route::resource('/view_profile', 'AuthorController'); 
