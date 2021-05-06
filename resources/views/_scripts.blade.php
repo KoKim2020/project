@@ -4,6 +4,16 @@
         'baseUrl' => url('/'),
         'routes' => collect(\Route::getRoutes())->mapWithKeys(function ($route) { return [$route->getName() => $route->uri()]; })
     ]) !!};
-    window.User = {!! Auth::user() !!}
 </script>
+
+ {{-- checkung current user --}}
+ @if(Auth::check()) 
+    <script>
+        window.User = {!! Auth::user() !!}
+    </script>
+@else 
+    <script>
+        window.User = null
+    </script>
+@endif
 

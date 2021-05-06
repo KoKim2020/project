@@ -41,6 +41,7 @@ trait RegistersUsers
             return $response;
         }
 
+
         return response()->json([
             'status' => 'success'
         ]);

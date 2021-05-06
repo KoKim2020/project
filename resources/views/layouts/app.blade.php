@@ -48,6 +48,9 @@
             @include('../background_image')
         </div>
     </div>
+
     @include('../_scripts')
+   
+    
 </body>
 </html>
