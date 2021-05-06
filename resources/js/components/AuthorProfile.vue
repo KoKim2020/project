@@ -34,7 +34,10 @@
                 >
                     <q-tab name="mails" label="Mails" />
                     <q-tab name="alarms" label="Alarms" />
-                    <q-tab name="movies" label="Movies" />
+                    <q-tab name="movies" label="Movies" />     
+
+                    <q-btn color="primary" icon="edit" flat label="Edit Profile" />
+               
                 </q-tabs>
 
                 <q-separator />
