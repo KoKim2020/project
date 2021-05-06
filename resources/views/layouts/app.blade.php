@@ -31,11 +31,8 @@
                         </div>
                         <q-btn outline rounded  color="primary" no-caps   type="a" href="{{ route('register') }}" label="Register" />
                     @else
-                        @php
-                            $currrentUser = Auth::user()
-                        @endphp
                         <add-post></add-post> 
-                        <account-setting :current_user="{{ $currrentUser }}" >
+                        <account-setting>
                             @csrf
                         </account-setting>
                     @endguest

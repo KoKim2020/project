@@ -1,9 +1,10 @@
 <template>
     <div>
+        {{ $user.id }}
         <q-card class="my-card" flat bordered>
             <q-item>
                 <q-item-section avatar>
-                    <q-avatar>
+                    <q-avatar size="160px">
                         <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
                     </q-avatar>
                 </q-item-section>
@@ -35,9 +36,13 @@
     export default {
         data () {
             return {
-                lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                // testing: window.User
             }
-        }
+        },
+        // created () {
+        //     console.log(window.User)
+        // }
     }
 </script>
 

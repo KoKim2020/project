@@ -9,7 +9,7 @@
             >
             <template v-slot:label>
                 <q-avatar size="33px">
-                    <img :src="current_user.profile_img">
+                    <img :src="$user.profile_img">
                 </q-avatar>
             </template>
 
@@ -17,10 +17,10 @@
                 <q-item clickable v-ripple>
                     <div class=" row items-start q-gutter-md">
                         <q-avatar size="52px">
-                            <img :src="current_user.profile_img">
+                            <img :src="$user.profile_img">
                         </q-avatar>
                         <q-item-section class="q-pt-sm">
-                            <q-item-label>{{  current_user.name }}</q-item-label>
+                            <q-item-label>{{  $user.name }}</q-item-label>
                             <q-item-label caption>Electronics Engineer</q-item-label>
                         </q-item-section>
                     </div>
@@ -58,7 +58,6 @@
                 logOut: route('logout')
             }
         },
-        props: ['current_user'],
         methods: {
             viewProfile () {
                	window.location.href = route('view_profile.index')

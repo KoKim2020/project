@@ -52,7 +52,7 @@ Quill.register('modules/imageResize', ImageResize);
 Vue.use(VueQuillEditor, {
 })
 
-
+Vue.prototype.$user = window.User // register a variable globally
 
 
 
