@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="tw-container  tw-mx-auto tw-px-4">
+    <div class="tw-container  tw-mx-auto tw-px-4 tw-py-8">
         <div class="tw-flex tw-justify-center">
-            <div class="tw-max-w-sm tw-rounded tw-overflow-hidden " style="max-width: 750px; width: 100%; padding: 25px; ">
+            <q-card class="tw-max-w-sm tw-rounded tw-overflow-hidden" style="max-width: 750px; width: 100%; padding: 25px; ">
                 <div class="tw-flex tw-flex-row tw-py-6">
                     <q-item-section avatar>
                         <q-avatar>
@@ -41,7 +41,8 @@
                         </span>
                     @endforeach
                 </div>
-            </div>
+            </q-card>
         </div>
     </div>
+    
 @endsection

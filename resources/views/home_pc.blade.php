@@ -5,10 +5,8 @@
     </div>
     {{-- news feed --}}
     <div class="tw-w-2/4">
-        <div class="tw-flex tw-justify-center">
-            <div class="">
-                @include('posts')
-            </div>
+        <div class="">
+            @include('posts')
         </div>
     </div>
     {{-- advertisements --}}

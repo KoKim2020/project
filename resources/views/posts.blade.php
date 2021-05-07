@@ -1,6 +1,6 @@
 
 @foreach ($posts as $post)
-    <div class="q-pa-md">
+    <div class="q-pa-md tw-flex tw-justify-center">
         <q-card style="width: 100%; max-width: 650px;">
             <q-item class="q-py-md">
                 <q-item-section avatar>
