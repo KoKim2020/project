@@ -15,7 +15,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return User::with('author')->get();
+        // return User::with('author')->get();
+        return Author::with('post')->get();
         return view('author_profile');
     }
 

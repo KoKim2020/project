@@ -24,7 +24,7 @@ class Author extends Model
     {
         return $this->belongsToMany(Profession::class);
     }
-
+    
     public function post () {
         return $this->hasMany(Post::class);
     }
