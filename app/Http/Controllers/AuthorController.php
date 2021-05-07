@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Author;
+use App\User;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -14,7 +15,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return Author::all();
+        return User::with('author')->get();
         return view('author_profile');
     }
 

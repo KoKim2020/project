@@ -44,6 +44,12 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         return asset(Storage::url($this->avatar));
     }
 
-    
+     /**
+     * Get the author record associated with the user.
+     */
+    public function author()
+    {
+        return $this->hasOne('App\Author');
+    }
 
 }
