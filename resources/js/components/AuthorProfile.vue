@@ -1,6 +1,7 @@
 <template>
     <div>
         <!-- <pre>{{ $user }}</pre> -->
+        <pre>{{ author }}</pre>
         <q-card class="my-card" flat bordered>
             <q-item>
                 <q-item-section avatar>
@@ -66,6 +67,8 @@
                 tab: 'tech_blog_posts'
             }
         },
+        props: ['author']
+
     }
 </script>
 

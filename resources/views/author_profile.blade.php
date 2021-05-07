@@ -4,7 +4,7 @@
 
     <div class="tw-container tw-mx-auto tw-px-4 tw-py-6">
         <div class="tw-flex tw-justify-center">
-            <author-profile></author-profile>
+            <author-profile :author="{{ $author }}"></author-profile>
         </div>
     </div>
     

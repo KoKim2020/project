@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class AuthorController extends Controller
 {
@@ -16,8 +17,11 @@ class AuthorController extends Controller
     public function index()
     {
         // return User::with('author')->get();
-        return Author::with('post')->get();
-        return view('author_profile');
+        $author_id = Auth::user()->author->id;
+        $author =  Author::with('post')->where('id', $author_id)->get();
+        return view('author_profile', [
+            'author' => $author
+        ]);
     }
 
     /**
