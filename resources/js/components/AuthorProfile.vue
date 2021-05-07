@@ -45,9 +45,15 @@
                 <q-tab-panels v-model="tab" animated>
 
                     <q-tab-panel name="tech_blog_posts">
-                        <div class="text-h6">Tech Blog Posts</div>
-                        {{ lorem }}
+                        <div  v-for="post in author.post" :key="post.id">
+                            <div class="text-h6">{{ post.title }}</div>
+                            <div v-html="post.body">
+
+                            </div>
+                        </div>
                     </q-tab-panel>
+
+                    
 
                     <q-tab-panel name="projects">
                         <div class="text-h6">Projects</div>

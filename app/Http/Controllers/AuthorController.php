@@ -18,7 +18,7 @@ class AuthorController extends Controller
     {
         // return User::with('author')->get();
         $author_id = Auth::user()->author->id;
-        $author =  Author::with('post')->where('id', $author_id)->get();
+        $author =  Author::with('post')->where('id', $author_id)->first();
         return view('author_profile', [
             'author' => $author
         ]);
