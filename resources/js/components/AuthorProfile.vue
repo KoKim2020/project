@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- <pre>{{ $user }}</pre> -->
-        <pre>{{ author }}</pre>
+        <!-- <pre>{{ tech_blog_posts }}</pre> -->
         <q-card class="my-card" flat bordered>
             <q-item>
                 <q-item-section avatar>
@@ -45,19 +45,32 @@
                 <q-tab-panels v-model="tab" animated>
 
                     <q-tab-panel name="tech_blog_posts">
-                        <div  v-for="post in author.post" :key="post.id">
+                        <!-- tech blog listing -->
+                        <div  v-for="post in tech_blog_posts" :key="post.id">
                             <div class="text-h6">{{ post.title }}</div>
-                            <div v-html="post.body">
-
-                            </div>
+                            <div v-html="post.body"></div>
+                            <q-separator />
+                        </div>
+                        <!-- no data icon -->
+                         <div v-if="tech_blog_posts.length == 0">
+                            <i class="material-icons" style="color:#0a0c0f;">report_problem</i>
+                            <span class="text-xs">No Data Avaiable</span>
                         </div>
                     </q-tab-panel>
 
-                    
-
                     <q-tab-panel name="projects">
-                        <div class="text-h6">Projects</div>
-                        {{ lorem }}
+                        <!-- projects listing -->
+                        <div  v-for="post in projects" :key="post.id">
+                            <!-- show only projects -->
+                            <div class="text-h6">{{ post.title }}</div>
+                            <div v-html="post.body"></div>
+                            <q-separator />
+                        </div>
+                        <!-- no data icon -->
+                        <div v-if="projects.length == 0">
+                            <i class="material-icons" style="color:#0a0c0f;">report_problem</i>
+                            <span class="text-xs">No Data Avaiable</span>
+                        </div>
                     </q-tab-panel>
                 </q-tab-panels>
             </q-card-section>
@@ -73,7 +86,17 @@
                 tab: 'tech_blog_posts'
             }
         },
-        props: ['author']
+        props: ['author'],
+         computed: {
+            // category_id == 1
+            tech_blog_posts: function () {
+                return this.author.post.filter( i => i.category_id == 1 );
+            },
+            // category_id == 2 or 3
+            projects: function () {
+                return this.author.post.filter( i => i.category_id != 1 );
+            }
+        }
 
     }
 </script>
