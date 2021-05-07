@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 class PostController extends Controller
@@ -61,8 +62,10 @@ class PostController extends Controller
         ];
         $imgUrls = [];
 
+        // current user
+        $user = Auth::user();
         $p = new Post();
-        $p->author_id = 1;
+        $p->author_id = $user->author->id; // store current author id
         $p->title = $request->title;
         $p->slug = Str::random(7);
         $p->featured = 1;
