@@ -91,11 +91,12 @@
                     })
                 }
                 else {
-                    // show loading while registering
-                    this.showLoading()
+                    
                     axios
                     .post(route('register'), this.formData)
                     .then(response => {
+                        // show loading while registering
+                        this.showLoading()
                         if(response.data.status == 'success'){
                             // hide loading after success
                             this.hideLoading()

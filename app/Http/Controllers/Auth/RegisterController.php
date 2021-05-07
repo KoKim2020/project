@@ -8,6 +8,7 @@ use App\User;
 use App\Triats\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Author;
 
 class RegisterController extends Controller
 {
@@ -64,11 +65,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // creating users
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        // creating authors
+        Author::create([
+            'user_id' => $user->id
+        ]);
+        return $user;
     }
 
     
