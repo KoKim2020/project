@@ -3,8 +3,8 @@
 @section('content')
     <div class="tw-container  tw-mx-auto tw-px-4 tw-py-8">
         <div class="tw-flex tw-justify-center">
-            <q-card class="tw-max-w-sm tw-rounded tw-overflow-hidden" style="max-width: 750px; width: 100%; padding: 25px; ">
-                <div class="tw-flex tw-flex-row tw-py-6">
+            <div class="tw-bg-white tw-shadow-lg  tw-max-w-sm tw-rounded tw-overflow-hidden" style="max-width: 750px; width: 100%; padding: 20px 40px; ">
+                <div class="tw-flex tw-flex-row tw-pb-6 ">
                     <q-item-section avatar>
                         <q-avatar>
                         <img src="{{ $post->author->user->profile_img}}">
@@ -33,16 +33,11 @@
                         {!! $post->body !!}
                     </p>
                 </div>
-
-                <div class="tw-px-6 tw-pt-4 tw-pb-2">
-                    @foreach ($post->tag as $post_tag)
-                        <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">
-                            #{{ $post_tag->name }}
-                        </span>
-                    @endforeach
-                </div>
-            </q-card>
+                <hr>
+                <discussion-list></discussion-list>
+            </div>
         </div>
     </div>
+    
     
 @endsection

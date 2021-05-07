@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tw-flex tw-justify-center">
         <!-- <pre>{{ $user }}</pre> -->
         <!-- <pre>{{ tech_blog_posts }}</pre> -->
         <q-card class="my-card" flat bordered>
