@@ -4,7 +4,7 @@
             Discussion(0)
         </div>
         <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" >
-            <template v-slot:before>
+            <template v-if="$user" v-slot:before>
                 <q-avatar>
                     <img src="https://cdn.quasar.dev/img/avatar5.jpg">
                 </q-avatar>
