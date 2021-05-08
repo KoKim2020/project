@@ -1,9 +1,9 @@
 <template>
     <div class="">
-        <div class="text-h6 tw-mt-3">
+        <div class="text-h6 tw-my-3">
             Discussion(0)
         </div>
-        <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow>
+        <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" :readonly="readonlyCommentBox">
             <template v-slot:before>
                 <q-avatar>
                     <img src="https://cdn.quasar.dev/img/avatar5.jpg">
@@ -19,18 +19,45 @@
                 <q-btn round dense flat icon="send" />
             </template>
         </q-input>
+         <q-dialog v-model="alert">
+            <q-card  style="width: 350px; max-width: 80vw;">
+
+                <q-card-section class="row items-center">
+                    <div class="text-h6 text-bold">Login to Continue</div>
+                    <q-space />
+                    <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-separator />
+            
+                <q-card-section class="q-pt-lg text-center">
+                    <login-form></login-form>
+                </q-card-section>
+
+            </q-card>
+        </q-dialog>
     </div>
 </template>
 
 <script>
+import LoginForm from './LoginForm.vue'
     export default {
+  components: { LoginForm },
         data () {
             return {
                 text: '',
                 ph: '',
-
-                dense: false
+                alert: false,
+                dense: false,
+                readonlyCommentBox: false
+            }
+        },
+        methods: {
+            openDialog () {
+                this.alert = true,
+                this.readonlyCommentBox = true
             }
         }
+
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="q-gutter-y-sm column" style="max-width: 300px">
+    <div class="q-gutter-y-sm column" style="max-width: 300px;">
         <q-input 
             rounded 
             outlined 
@@ -27,15 +27,21 @@
 
         <q-checkbox  v-model="remember" val="remember" label="Remember Me" />
 
-        <div class="row justify-between">
+        <div class="row justify-between tw-mb-4">
             <q-btn flat type="a" :href="forgetPasswordUrl" no-caps push color="primary" label="Forgot Password?" />
             <q-btn label="Login" no-caps push type="submit" color="primary" @click="logIn"/>
+        </div>
+        <q-separator/>
+        <div class="text-center q-pt-md">
+            <register-form></register-form>
         </div>
     </div>
 </template>
 
 <script>
+import RegisterForm from './RegisterForm.vue'
 export default {
+  components: { RegisterForm },
     data() {
         return {
             formData: {
