@@ -31,7 +31,8 @@
                 <q-separator />
             
                 <q-card-section class="q-pt-lg text-center">
-                    <login-form></login-form>
+                    <!-- add_comment is used to reload post_detail after logining -->
+                    <login-form add_comment="yes"></login-form> 
                 </q-card-section>
 
             </q-card>

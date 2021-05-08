@@ -1,5 +1,6 @@
 <template>
     <div class="q-gutter-y-sm column" style="max-width: 300px;">
+        <!-- <pre>{{ add_comment }}</pre> -->
         <q-input 
             rounded 
             outlined 
@@ -42,6 +43,7 @@
 import RegisterForm from './RegisterForm.vue'
 export default {
   components: { RegisterForm },
+    props: ['add_comment'], /// use login form form comments section
     data() {
         return {
             formData: {
@@ -74,7 +76,11 @@ export default {
                         message: 'Login Successfully'
                     })
                     // Navigate to the Location.reload article by replacing this page
-                    window.location.href = route('home')
+                    if(this.add_comment == 'yes') {
+                        window.location.reload() // from comments section
+                    } else {
+                        window.location.href = route('home') /// from home page
+                    }
                 }
             })
             .catch (error => {
