@@ -3,20 +3,21 @@
         <div class="text-h6 tw-my-3">
             Discussion(0)
         </div>
-        <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" >
+        <pre>{{ formData }}</pre>
+        <q-input bottom-slots v-model="formData.text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" >
             <template v-if="$user" v-slot:before>
                 <q-avatar>
-                    <img src="https://cdn.quasar.dev/img/avatar5.jpg">
+                    <img :src="$user.profile_img">
                 </q-avatar>
             </template>
 
             <template v-slot:append>
-                <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
+                <q-icon v-if="formData.text !== ''" name="close" @click="formData.text = ''" class="cursor-pointer" />
                 <q-icon name="schedule" />
             </template>
 
             <template v-slot:after>
-                <q-btn round dense flat icon="send" />
+                <q-btn round dense flat icon="send" @click="submit"/>
             </template>
         </q-input>
          <q-dialog v-model="alert">
@@ -46,8 +47,9 @@ import LoginForm from './LoginForm.vue'
   components: { LoginForm },
         data () {
             return {
-                text: '',
-                ph: '',
+                formData: {
+                    text: ''
+                },
                 alert: false,
                 dense: false,
             }
@@ -58,6 +60,18 @@ import LoginForm from './LoginForm.vue'
                 if(this.$user == null) {
                     this.alert = true
                 }
+            }, 
+            submit () {
+                 axios 
+                .post('/comment', this.formData)
+                .then( response => {
+                    console.log(response.data)
+                    // this.response = response.data
+                    // location.reload();
+                })
+                .catch (error => {
+                    this.$setLaravelValidationErrorsFromResponse(error.response.data);
+                });
             }
         }
 

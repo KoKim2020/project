@@ -53,7 +53,7 @@
                 </q-card-section>
                 <input ref="upload" type="file" hidden id="imageUpload" @change="imageUpload($event)">
                 <q-card-actions align="center" class="q-pb-md">
-                    <q-btn  push label="Post" color="primary" @click="test"  style="width: 150px" />
+                    <q-btn  push label="Post" color="primary" @click="submit"  style="width: 150px" />
                 </q-card-actions>
             </q-card>
         </q-dialog>
@@ -164,7 +164,7 @@
                     })
                 }
             },
-            test () {
+            submit () {
                 axios 
                 .post('/post', this.formData)
                 .then( response => {
