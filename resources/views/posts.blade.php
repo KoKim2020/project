@@ -31,9 +31,17 @@
                 {!! (Str::limit( $post->body, 500 )) !!}
             </q-card-section>
 
-            <q-card-actions  align="right">
-                <q-btn flat color="primary"  type="a" href="{{ route('post.show', $post->id ) }}" >More + </q-btn>
-            </q-card-actions>
+            <div class="tw-flex tw-justify-between tw-mb-2">
+                <div>
+                    <q-btn color="primary" icon="mail" flat label="On Left" />
+                </div>
+                <div>
+                    <q-btn color="primary" icon="mail" flat label="On Left" />
+                </div>
+                <div>
+                    <q-btn flat color="primary"  type="a" href="{{ route('post.show', $post->id ) }}" >More + </q-btn>
+                </div>
+            </div>
         </q-card>
     </div>
 @endforeach
