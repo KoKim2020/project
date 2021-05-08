@@ -15,10 +15,6 @@
                 <q-icon name="schedule" />
             </template>
 
-            <!-- <template v-slot:hint>
-                Field hint
-            </template> -->
-
             <template v-slot:after>
                 <q-btn round dense flat icon="send" />
             </template>
