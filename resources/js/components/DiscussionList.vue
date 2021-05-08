@@ -4,7 +4,16 @@
             Discussion(0)
         </div>
         <pre>{{ formData }}</pre>
-        <q-input bottom-slots v-model="formData.text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" >
+        <q-input bottom-slots 
+            v-model="formData.text" 
+            label="Add to the Discussion"  
+            :dense="dense" 
+            autogrow 
+            :error-message="errors.first('comment')"
+            :error="errors.has('comment')"
+            @click="openDialog"
+         >
+
             <template v-if="$user" v-slot:before>
                 <q-avatar>
                     <img :src="$user.profile_img">
