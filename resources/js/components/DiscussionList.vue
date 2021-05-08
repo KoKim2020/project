@@ -3,7 +3,7 @@
         <div class="text-h6 tw-my-3">
             Discussion(0)
         </div>
-        <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" :readonly="readonlyCommentBox">
+        <q-input bottom-slots v-model="text" label="Add to the Discussion"  :dense="dense" autogrow @click="openDialog" >
             <template v-slot:before>
                 <q-avatar>
                     <img src="https://cdn.quasar.dev/img/avatar5.jpg">
@@ -49,13 +49,14 @@ import LoginForm from './LoginForm.vue'
                 ph: '',
                 alert: false,
                 dense: false,
-                readonlyCommentBox: false
             }
         },
         methods: {
             openDialog () {
-                this.alert = true,
-                this.readonlyCommentBox = true
+                // console.log(this.$user)
+                if(this.$user == null) {
+                    this.alert = true
+                }
             }
         }
 
