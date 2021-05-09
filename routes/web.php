@@ -42,11 +42,11 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 // Posts
-Route::resource('/post', 'PostController');
+Route::resource('/post', 'PostController')->middleware('auth');
 // comments
-Route::resource('/comment', 'CommentController');
+Route::resource('/comment', 'CommentController')->middleware('auth');
 
 Route::get('/category', 'PostController@getCategory');
 
 // view profile of Author
-Route::resource('/view_profile', 'AuthorController'); 
+Route::resource('/view_profile', 'AuthorController')->middleware('auth');
