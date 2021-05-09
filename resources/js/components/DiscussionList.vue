@@ -3,7 +3,9 @@
         <div class="text-h6 tw-my-3">
             Discussion(0)
         </div>
+
         <pre>{{ formData }}</pre>
+        <!-- discussion input box -->
         <q-input bottom-slots 
             v-model="formData.text" 
             label="Add to the Discussion"  
@@ -30,20 +32,62 @@
             </template>
         </q-input>
         
+        <!-- discussion listing -->
         <q-list padding>
 
             <q-item>
                 <q-item-section top avatar>
-                <q-avatar color="primary" text-color="white" icon="bluetooth" />
+                    <q-avatar color="primary" text-color="white" icon="bluetooth" />
                 </q-item-section>
 
                 <q-item-section>
-                <q-item-label>Single line item</q-item-label>
-                <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                    <q-item-label>Single line item</q-item-label>
+                    <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
                 </q-item-section>
 
                 <q-item-section side top>
-                <q-item-label caption>5 min ago</q-item-label>
+                    <q-item-label caption>5 min ago</q-item-label>
+                </q-item-section>
+            </q-item>
+
+            <q-item>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro voluptas quam harum reiciendis dignissimos dolorem sequi optio aliquam ullam. Accusantium illo dolorum aspernatur non voluptas possimus facere temporibus debitis vero?</p>
+            </q-item>
+
+            <q-separator spaced inset="item" />
+
+            <q-item>
+                <q-item-section top avatar>
+                    <q-avatar color="primary" text-color="white" square icon="bluetooth" />
+                </q-item-section>
+
+                <q-item-section>
+                    <q-item-label>Single line item</q-item-label>
+                    <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                </q-item-section>
+
+                <q-item-section side top>
+                    <q-item-label caption>meta</q-item-label>
+                </q-item-section>
+                \
+            </q-item>
+
+            <q-separator spaced inset="item" />
+
+            <q-item>
+                <q-item-section top avatar>
+                    <q-avatar>
+                        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                    </q-avatar>
+                </q-item-section>
+
+                <q-item-section>
+                    <q-item-label>Single line item</q-item-label>
+                    <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                </q-item-section>
+
+                <q-item-section side top>
+                    <q-badge label="10k" />
                 </q-item-section>
             </q-item>
 
@@ -51,54 +95,18 @@
 
             <q-item>
                 <q-item-section top avatar>
-                <q-avatar color="primary" text-color="white" square icon="bluetooth" />
+                    <q-avatar rounded>
+                        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                    </q-avatar>
                 </q-item-section>
 
                 <q-item-section>
-                <q-item-label>Single line item</q-item-label>
-                <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                    <q-item-label>Single line item</q-item-label>
+                    <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
                 </q-item-section>
 
                 <q-item-section side top>
-                <q-item-label caption>meta</q-item-label>
-                </q-item-section>
-            </q-item>
-
-            <q-separator spaced inset="item" />
-
-            <q-item>
-                <q-item-section top avatar>
-                <q-avatar>
-                    <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-                </q-avatar>
-                </q-item-section>
-
-                <q-item-section>
-                <q-item-label>Single line item</q-item-label>
-                <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
-                </q-item-section>
-
-                <q-item-section side top>
-                <q-badge label="10k" />
-                </q-item-section>
-            </q-item>
-
-            <q-separator spaced inset="item" />
-
-            <q-item>
-                <q-item-section top avatar>
-                <q-avatar rounded>
-                    <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-                </q-avatar>
-                </q-item-section>
-
-                <q-item-section>
-                <q-item-label>Single line item</q-item-label>
-                <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
-                </q-item-section>
-
-                <q-item-section side top>
-                <q-item-label caption>meta</q-item-label>
+                    <q-item-label caption>meta</q-item-label>
                 </q-item-section>
             </q-item>
 
@@ -106,16 +114,16 @@
 
             <q-item>
                 <q-item-section top thumbnail class="q-ml-none">
-                <img src="https://cdn.quasar.dev/img/mountains.jpg">
+                    <img src="https://cdn.quasar.dev/img/mountains.jpg">
                 </q-item-section>
 
                 <q-item-section>
-                <q-item-label>Single line item</q-item-label>
-                <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                    <q-item-label>Single line item</q-item-label>
+                    <q-item-label caption>Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
                 </q-item-section>
 
                 <q-item-section side top>
-                <q-item-label caption>meta</q-item-label>
+                    <q-item-label caption>meta</q-item-label>
                 </q-item-section>
             </q-item>
         </q-list>
