@@ -104,7 +104,6 @@ class PostController extends Controller
         $post = Post::findorFail($id);
         $post->load('tag', 'comments.user');
         // return $post;
-        return $post;
         
         return view('post_detail', [
             'post' => $post
