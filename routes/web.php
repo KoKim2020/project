@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 // Posts
-Route::resource('/post', 'PostController')->middleware('auth');
+Route::resource('/post', 'PostController');
 // comments
 Route::resource('/comment', 'CommentController')->middleware('auth');
 

@@ -13,9 +13,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-
-        $this->middleware(['auth', 'verified'])->only('create');
-
+        $this->middleware(['auth', 'verified'])->only('store'); /// only middleware on store function
     }
     /**
      * Display a listing of the resource.
