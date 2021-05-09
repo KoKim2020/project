@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <hr>
-                <discussion-list post_id="{{ $post->id }}"></discussion-list>
+                <discussion-list post_id="{{ $post->id }}" :comments="{{ $post->comments }}"></discussion-list>
             </div>
         </div>
     </div>

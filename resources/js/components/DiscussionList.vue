@@ -1,10 +1,11 @@
 <template>
     <div class="">
         <div class="text-h6 tw-my-3">
-            Discussion(0)
+            Discussion()
         </div>
 
-        <pre>{{ formData }}</pre>
+        <!-- <pre>{{ formData }}</pre>
+        <pre>{{ comments }}</pre> -->
         <!-- discussion input box -->
         <q-input bottom-slots 
             v-model="formData.comment" 
@@ -33,18 +34,20 @@
         </q-input>
         
         <!-- discussion listing -->
-        <q-list padding>
+        <q-list padding v-for="comment in comments" :key="comment.id">
 
             <q-item>
                 <q-item-section top avatar>
                     <q-avatar>
-                        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+                        <img :src="comment.user.profile_img">
                     </q-avatar>
                 </q-item-section>
 
                 <q-item-section>
-                    <q-item-label>Single line item</q-item-label>
-                    <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                    <q-item-label>
+                        {{ comment.user.name }}
+                    </q-item-label>
+                    <!-- <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label> -->
                 </q-item-section>
 
                 <q-item-section side top>
@@ -53,7 +56,9 @@
             </q-item>
 
             <q-item>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro voluptas quam harum reiciendis dignissimos dolorem sequi optio aliquam ullam. Accusantium illo dolorum aspernatur non voluptas possimus facere temporibus debitis vero?</p>
+                <p>
+                    {{ comment.comment }}
+                </p>
             </q-item>
             <q-separator spaced  />
 
@@ -94,7 +99,7 @@ import LoginForm from './LoginForm.vue'
                 dense: false,
             }
         },
-        props: ['post_id'],
+        props: ['post_id', 'comments'],
         methods: {
             openDialog () {
                 // console.log(this.$user)
