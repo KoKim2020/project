@@ -168,8 +168,17 @@
                 axios 
                 .post('/post', this.formData)
                 .then( response => {
-                    this.response = response.data
-                    location.reload();
+                    // console.log(response.data)
+                    // this.response = response.data
+                    if(response.data.status == 'success') {
+                        this.$q.notify({
+                            color: 'green-4',
+                            textColor: 'white',
+                            icon: 'cloud_done',
+                            message: 'Posted Successfully'
+                        })
+                        location.reload();
+                    }
                 })
                 .catch (error => {
                     this.$setLaravelValidationErrorsFromResponse(error.response.data);

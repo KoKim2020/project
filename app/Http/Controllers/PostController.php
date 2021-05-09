@@ -87,7 +87,10 @@ class PostController extends Controller
         $p->category_id = $request->category;
         $p->microcontroller_id = $request->microcontroller_id;
         $p->save();
-        return "success";
+        return response()->json([
+            'status' => 'success',
+            'code' => 200
+        ]);
     }
 
     /**

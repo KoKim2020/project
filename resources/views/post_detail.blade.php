@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <hr>
-                <discussion-list></discussion-list>
+                <discussion-list post_id="{{ $post->id }}"></discussion-list>
             </div>
         </div>
     </div>

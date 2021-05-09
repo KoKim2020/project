@@ -7,7 +7,7 @@
         <pre>{{ formData }}</pre>
         <!-- discussion input box -->
         <q-input bottom-slots 
-            v-model="formData.text" 
+            v-model="formData.comment" 
             label="Add to the Discussion"  
             :dense="dense" 
             autogrow 
@@ -23,7 +23,7 @@
             </template>
 
             <template v-slot:append>
-                <q-icon v-if="formData.text !== ''" name="close" @click="formData.text = ''" class="cursor-pointer" />
+                <q-icon v-if="formData.comment !== ''" name="close" @click="formData.comment = ''" class="cursor-pointer" />
                 <q-icon name="schedule" />
             </template>
 
@@ -56,7 +56,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro voluptas quam harum reiciendis dignissimos dolorem sequi optio aliquam ullam. Accusantium illo dolorum aspernatur non voluptas possimus facere temporibus debitis vero?</p>
             </q-item>
             <q-separator spaced  />
-            
+
         </q-list>
         <q-dialog v-model="alert">
             <q-card  style="width: 350px; max-width: 80vw;">
@@ -86,12 +86,15 @@ import LoginForm from './LoginForm.vue'
         data () {
             return {
                 formData: {
-                    text: ''
+                    comment: '',
+                    user_id: this.$user.id,
+                    post_id: this.post_id
                 },
                 alert: false,
                 dense: false,
             }
         },
+        props: ['post_id'],
         methods: {
             openDialog () {
                 // console.log(this.$user)
@@ -103,9 +106,15 @@ import LoginForm from './LoginForm.vue'
                  axios 
                 .post('/comment', this.formData)
                 .then( response => {
-                    console.log(response.data)
-                    // this.response = response.data
-                    // location.reload();
+                    if(response.data.status == 'success') {
+                        this.$q.notify({
+                            color: 'green-4',
+                            textColor: 'white',
+                            icon: 'cloud_done',
+                            message: 'Commented Successfully'
+                        })
+                        location.reload();
+                    }
                 })
                 .catch (error => {
                     this.$setLaravelValidationErrorsFromResponse(error.response.data);

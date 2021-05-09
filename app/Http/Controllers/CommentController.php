@@ -42,7 +42,16 @@ class CommentController extends Controller
             'comment' => 'required'
         ]);
 
-        return "success";
+        Comment::create([
+            'post_id' => $request->post_id,
+            'user_id' => $request->user_id,
+            'comment' => $request->comment
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'code' => 200
+        ]);
     }
 
     /**
