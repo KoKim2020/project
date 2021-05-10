@@ -36,7 +36,7 @@
                     <q-btn color="primary" icon="favorite" flat label="100" />
                 </div>
                 <div>
-                    <q-btn color="primary" icon="comment" flat label="52" />
+                    <q-btn color="primary" icon="comment"  type="a" href="{{ route('post.show', $post->id ) }}" flat label="{{ count($post->comments) }}" />
                 </div>
                 <div>
                     <q-btn flat color="primary"  type="a" href="{{ route('post.show', $post->id ) }}" >More + </q-btn>

@@ -1,9 +1,13 @@
 <template>
     <div class="">
-        <div class="text-h6 tw-my-3">
-            Discussion()
+        <div class="tw-flex tw-justify-between">
+            <q-btn color="" icon="favorite_border" flat label="100" />
+            <div class="text-h6 tw-my-3">
+                Discussion(
+                    {{ comments.length }}
+                )
+            </div>
         </div>
-
         <!-- <pre>{{ formData }}</pre>
         <pre>{{ comments }}</pre> -->
         <!-- discussion input box -->
@@ -91,12 +95,12 @@
 <script>
 import LoginForm from './LoginForm.vue'
     export default {
-  components: { LoginForm },
+        components: { LoginForm },
         data () {
             return {
                 formData: {
                     comment: '',
-                    user_id: this.$user.id,
+                    user: this.$user,
                     post_id: this.post_id
                 },
                 alert: false,
@@ -115,6 +119,7 @@ import LoginForm from './LoginForm.vue'
                  axios 
                 .post('/comment', this.formData)
                 .then( response => {
+                    console.log(response.data)
                     if(response.data.status == 'success') {
                         this.$q.notify({
                             color: 'green-4',
