@@ -5,7 +5,7 @@
         'routes' => collect(\Route::getRoutes())->mapWithKeys(function ($route) { return [$route->getName() => $route->uri()]; })
     ]) !!};
 </script>
-
+{{--  --}}
  {{-- checkung current user --}}
  @if(Auth::check()) 
     <script>
