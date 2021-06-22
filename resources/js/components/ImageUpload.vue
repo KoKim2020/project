@@ -84,14 +84,14 @@
                 this.$refs.upload.click();
             },
             uploadImage (event) {
-                var vm = this
+                var vm = obj
                 var input = event.target;
                 // The includes() method determines whether a string contains the characters of a specified string.
                 if (input.files[0].type.includes("image")) {
                     var reader = new FileReader();
                     reader.onload = function(e){
                         // output of reader is base 64 encoded image
-                        vm.image = reader.result; // show on cropper
+                        obj.image = reader.result; // show on cropper
                     };
                     reader.readAsDataURL(input.files[0]);
                     // show cropper modal
